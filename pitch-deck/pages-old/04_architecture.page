@@ -1,0 +1,458 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>9 Engines. 1 System. Zero Overhead.</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: layer-client-bg
+    elementType: shape
+    bounds: [60, 110, 350, 85]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A2B4A"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: layer-client-label
+    elementType: text
+    bounds: [70, 115, 330, 25]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>CLIENT LAYER</b></p>
+
+  - elementId: layer-client-text
+    elementType: text
+    bounds: [70, 140, 330, 48]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>8 Drivers | REST | GraphQL | RESP | PgWire</p>
+
+  - elementId: arrow-1
+    elementType: shape
+    bounds: [215, 195, 20, 20]
+    shape:
+      shapeName: "triangle"
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: layer-security-bg
+    elementType: shape
+    bounds: [60, 215, 350, 85]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A2B4A"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: layer-security-label
+    elementType: text
+    bounds: [70, 220, 330, 25]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>PROTOCOL & SECURITY</b></p>
+
+  - elementId: layer-security-text
+    elementType: text
+    bounds: [70, 245, 330, 48]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>TLS 1.3 | RBAC | OIDC | Audit | Rate Limit</p>
+
+  - elementId: arrow-2
+    elementType: shape
+    bounds: [215, 300, 20, 20]
+    shape:
+      shapeName: "triangle"
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: layer-query-bg
+    elementType: shape
+    bounds: [60, 320, 350, 85]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A2B4A"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: layer-query-label
+    elementType: text
+    bounds: [70, 325, 330, 25]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>QUERY INTELLIGENCE</b></p>
+
+  - elementId: layer-query-text
+    elementType: text
+    bounds: [70, 350, 330, 48]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>Lexer | Parser | CBO Optimizer | Parallel DAG</p>
+
+  - elementId: engine-title
+    elementType: text
+    bounds: [440, 110, 300, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>9 STORAGE ENGINES</b></p>
+
+  - elementId: eng-sql-bg
+    elementType: shape
+    bounds: [440, 145, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-sql
+    elementType: text
+    bounds: [445, 148, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>SQL</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">B+Tree, MVCC</p>
+
+  - elementId: eng-vector-bg
+    elementType: shape
+    bounds: [595, 145, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-vector
+    elementType: text
+    bounds: [600, 148, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Vector</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">HNSW, SIMD</p>
+
+  - elementId: eng-graph-bg
+    elementType: shape
+    bounds: [750, 145, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-graph
+    elementType: text
+    bounds: [755, 148, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Graph</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">BFS, PageRank</p>
+
+  - elementId: eng-doc-bg
+    elementType: shape
+    bounds: [905, 145, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-doc
+    elementType: text
+    bounds: [910, 148, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Document</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">JSON, BSON</p>
+
+  - elementId: eng-cache-bg
+    elementType: shape
+    bounds: [1060, 145, 160, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-cache
+    elementType: text
+    bounds: [1065, 148, 150, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Cache</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">RESP, PubSub</p>
+
+  - elementId: eng-search-bg
+    elementType: shape
+    bounds: [440, 210, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-search
+    elementType: text
+    bounds: [445, 213, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Search</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">BM25, WAND</p>
+
+  - elementId: eng-ts-bg
+    elementType: shape
+    bounds: [595, 210, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-ts
+    elementType: text
+    bounds: [600, 213, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>TimeSeries</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">Buckets, Retention</p>
+
+  - elementId: eng-col-bg
+    elementType: shape
+    bounds: [750, 210, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-col
+    elementType: text
+    bounds: [755, 213, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Columnar</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">Zone Maps, Parquet</p>
+
+  - elementId: eng-spatial-bg
+    elementType: shape
+    bounds: [905, 210, 145, 55]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: eng-spatial
+    elementType: text
+    bounds: [910, 213, 135, 50]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p><b>Spatial</b></p>
+        <p style="color: #8B95A5; font-size: 11px;">R-Tree, GeoJSON</p>
+
+  - elementId: layer-storage-bg
+    elementType: shape
+    bounds: [440, 290, 780, 70]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A2B4A"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: layer-storage-label
+    elementType: text
+    bounds: [450, 295, 760, 25]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>STORAGE LAYER</b></p>
+
+  - elementId: layer-storage-text
+    elementType: text
+    bounds: [450, 318, 760, 35]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>B+Tree (16KB) | Buffer Pool (16-shard LRU) | WAL | AES-GCM | Rust FFI SIMD | MVCC</p>
+
+  - elementId: layer-agent-bg
+    elementType: shape
+    bounds: [60, 420, 1160, 70]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A2B4A"
+      border:
+        style: solid
+        width: 1
+        color: "#10B981"
+
+  - elementId: layer-agent-label
+    elementType: text
+    bounds: [70, 425, 1140, 25]
+    content:
+      style: "$annotation"
+      color: "#10B981"
+      text: |
+        <p><b>AI AGENT SYSTEM</b> — CEO / CTO / Senior Managers / Workers / Sentinel / Autopilot</p>
+
+  - elementId: layer-agent-text
+    elementType: text
+    bounds: [70, 448, 1140, 35]
+    content:
+      style: "$body"
+      fontSize: 14
+      text: |
+        <p>Sentinel (6 probes) | CEO (classifier) | CTO (strategy) | Senior Managers (7) | Worker Pools | Autopilot (resource allocation)</p>
+
+  - elementId: code-label
+    elementType: text
+    bounds: [60, 520, 400, 25]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>EXAMPLE: Multi-Model Query</b></p>
+
+  - elementId: code-box
+    elementType: shape
+    bounds: [60, 545, 1160, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+
+  - elementId: code-text
+    elementType: text
+    bounds: [80, 550, 1120, 90]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#8B95A5"
+      text: |
+        <p><b style="color: #D4A843;">SELECT</b> p.name, v.similarity, g.connections</p>
+        <p><b style="color: #D4A843;">FROM</b> products p</p>
+        <p><b style="color: #D4A843;">JOIN</b> VECTOR SEARCH product_embeddings QUERY [...] TOP 10 <b style="color: #D4A843;">AS</b> v <b style="color: #D4A843;">ON</b> p.id = v.id</p>
+        <p><b style="color: #D4A843;">JOIN</b> GRAPH TRAVERSE BFS FROM p.supplier_id DEPTH 2 <b style="color: #D4A843;">AS</b> g;</p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">04</p>
