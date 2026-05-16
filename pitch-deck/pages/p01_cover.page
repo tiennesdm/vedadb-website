@@ -1,0 +1,46 @@
+pageType: cover
+background:
+  type: solid
+  color: "$primary"
+elements:
+  - elementId: cover-title
+    elementType: text
+    bounds: [240, 260, 800, 68]
+    content:
+      fontSize: 52
+      color: "$accent"
+      fontFamily: "Liter"
+      letterSpacing: 8
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>VEDADB</p>
+  - elementId: gold-line
+    elementType: shape
+    bounds: [540, 340, 200, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: cover-subtitle
+    elementType: text
+    bounds: [90, 370, 1100, 36]
+    content:
+      fontSize: 24
+      color: "$light"
+      fontFamily: "QuattrocentoSans"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>The World's First Truly Unified Multi-Model Database</p>
+  - elementId: cover-tagline
+    elementType: text
+    bounds: [190, 430, 900, 28]
+    content:
+      fontSize: 18
+      color: "$light"
+      fontFamily: "QuattrocentoSans"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>One Engine. Seven Data Models. Zero Fragmentation.</p>
