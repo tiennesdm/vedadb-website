@@ -1,0 +1,45 @@
+pageType: final
+background:
+  type: solid
+  color: "$primary"
+elements:
+  - elementId: final-headline
+    elementType: text
+    bounds: [100, 260, 1080, 55]
+    content:
+      fontSize: 42
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>ONE DATABASE. INFINITE POSSIBILITIES.</p>
+  - elementId: gold-line
+    elementType: shape
+    bounds: [580, 330, 120, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: final-brand
+    elementType: text
+    bounds: [440, 360, 400, 33]
+    content:
+      fontSize: 22
+      color: "$light"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>VedaDB</p>
+  - elementId: final-contact
+    elementType: text
+    bounds: [280, 420, 720, 24]
+    content:
+      fontSize: 16
+      color: "$light"
+      fontFamily: "QuattrocentoSans"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>contact@vedadb.io | github.com/vedadb</p>
