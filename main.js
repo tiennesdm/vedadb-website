@@ -1,119 +1,305 @@
-// ========== VEDADB EARLY STAGE WEBSITE JS ==========
+/**
+ * VedaDB Landing Page - Main JavaScript
+ * Features: Smooth scroll, animated counters, mobile menu, theme toggle, code tabs, copy button, scroll reveal
+ */
 
-// Mobile menu toggle
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const navCta = document.querySelector('.nav-cta');
-    
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.display = '';
-        navCta.style.display = '';
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '68px';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'var(--bg-primary)';
-        navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid var(--border)';
-        navLinks.style.gap = '16px';
-        
-        navCta.style.display = 'flex';
-        navCta.style.position = 'absolute';
-        navCta.style.top = '200px';
-        navCta.style.left = '20px';
-    }
-}
+(function() {
+  'use strict';
 
-// Waitlist form handler
-function handleWaitlist(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('input[type="email"]').value;
-    
-    // Show thank you message
-    const form = event.target;
-    form.innerHTML = `
-        <div style="padding: 20px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px;">
-            <div style="font-size: 24px; margin-bottom: 8px;">🎉</div>
-            <div style="font-weight: 700; color: var(--success); margin-bottom: 4px;">Beta access requested!</div>
-            <div style="font-size: 14px; color: var(--text-secondary);">We'll reach out at ${email} when beta opens.</div>
-        </div>
-    `;
-    
-    // In production, send to backend/API
-    console.log('Waitlist signup:', email);
-}
+  // ==========================================
+  // Theme Toggle (Dark/Light Mode)
+  // ==========================================
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
 
-// Navbar scroll effect
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 50) {
-        navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-    } else {
-        navbar.style.background = 'rgba(10, 14, 26, 0.8)';
-    }
-    
-    lastScroll = currentScroll;
-});
+  // Check for saved theme preference or default to dark
+  const savedTheme = localStorage.getItem('vedadb-theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('vedadb-theme', newTheme);
+  });
+
+  // ==========================================
+  // Mobile Menu Toggle
+  // ==========================================
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
     });
-});
+  });
 
-// Intersection observer for fade-in animations
-const observerOptions = {
+  // ==========================================
+  // Navbar Scroll Effect
+  // ==========================================
+  const navbar = document.getElementById('navbar');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  // ==========================================
+  // Smooth Scroll for Anchor Links
+  // ==========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const navHeight = navbar.offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // ==========================================
+  // Animated Number Counters
+  // ==========================================
+  const animatedNumbers = document.querySelectorAll('.stat-number[data-target], .perf-number[data-target]');
+
+  const animateCounter = (el) => {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const isDecimal = target % 1 !== 0;
+    const duration = 2000;
+    const start = performance.now();
+
+    const step = (timestamp) => {
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+
+      if (isDecimal) {
+        el.textContent = current.toFixed(1);
+      } else {
+        el.textContent = Math.floor(current).toLocaleString();
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        if (isDecimal) {
+          el.textContent = target.toFixed(1);
+        } else {
+          el.textContent = target.toLocaleString();
+        }
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  // Intersection Observer for counters
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  animatedNumbers.forEach(el => counterObserver.observe(el));
+
+  // ==========================================
+  // Performance Bar Animation
+  // ==========================================
+  const perfBars = document.querySelectorAll('.perf-bar');
+
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.getAttribute('data-width');
+        const delay = parseInt(bar.getAttribute('data-delay') || '0');
+
+        setTimeout(() => {
+          bar.style.setProperty('--bar-width', width + '%');
+          bar.classList.add('animated');
+        }, delay);
+
+        barObserver.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  perfBars.forEach(bar => barObserver.observe(bar));
+
+  // ==========================================
+  // Code Tab Switching
+  // ==========================================
+  const codeTabs = document.querySelectorAll('.code-tab');
+  const codeContents = document.querySelectorAll('.code-content');
+  const codeFilename = document.querySelector('.code-filename');
+
+  const filenames = {
+    sql: 'multi_model_query.sql',
+    python: 'query_example.py',
+    js: 'transaction.js',
+    go: 'main.go'
+  };
+
+  codeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-tab');
+
+      // Update tab states
+      codeTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update content visibility
+      codeContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === 'tab-' + targetTab) {
+          content.classList.add('active');
+        }
+      });
+
+      // Update filename
+      if (codeFilename && filenames[targetTab]) {
+        codeFilename.textContent = filenames[targetTab];
+      }
+    });
+  });
+
+  // ==========================================
+  // Copy Install Command
+  // ==========================================
+  const copyBtn = document.getElementById('copyBtn');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const code = copyBtn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const tooltip = copyBtn.querySelector('.copy-tooltip');
+        tooltip.classList.add('show');
+
+        setTimeout(() => {
+          tooltip.classList.remove('show');
+        }, 2000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = code;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        const tooltip = copyBtn.querySelector('.copy-tooltip');
+        tooltip.classList.add('show');
+        setTimeout(() => tooltip.classList.remove('show'), 2000);
+      });
+    });
+  }
+
+  // ==========================================
+  // Scroll Reveal Animation
+  // ==========================================
+  const revealElements = document.querySelectorAll(
+    '.feature-card, .testimonial-card, .pricing-card, .perf-card, .driver-card, .arch-layer, .video-card'
+  );
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.getAttribute('data-delay') || 0;
+
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, parseInt(delay));
+
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
-};
+  });
 
-const observer = new IntersectionObserver((entries) => {
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ==========================================
+  // Parallax Effect for Hero Orbs
+  // ==========================================
+  const orbs = document.querySelectorAll('.gradient-orb');
+
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      orbs.forEach((orb, i) => {
+        const speed = (i + 1) * 10;
+        orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      });
+    });
+  }
+
+  // ==========================================
+  // Keyboard Navigation
+  // ==========================================
+  document.addEventListener('keydown', (e) => {
+    // Press 'T' to toggle theme
+    if (e.key === 't' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const activeElement = document.activeElement;
+      if (activeElement.tagName !== 'INPUT' && activeElement.tagName !== 'TEXTAREA') {
+        themeToggle.click();
+      }
+    }
+  });
+
+  // ==========================================
+  // Active Section Highlight in Nav
+  // ==========================================
+  const sections = document.querySelectorAll('section[id]');
+  const navLinkEls = document.querySelectorAll('.nav-link');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinkEls.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
     });
-}, observerOptions);
+  }, {
+    threshold: 0.3
+  });
 
-// Observe cards and sections
-document.addEventListener('DOMContentLoaded', () => {
-    const animElements = document.querySelectorAll(
-        '.problem-card, .engine-card, .market-card, .timeline-item, .arch-layer'
-    );
-    
-    animElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
+  sections.forEach(section => sectionObserver.observe(section));
 
-// Console branding
-console.log(
-    '%c◈ VedaDB',
-    'color: #7c3aed; font-size: 24px; font-weight: 800;'
-);
-console.log(
-    '%cOne Database. Every Workload. Zero Compromises.',
-    'color: #06b6d4; font-size: 14px;'
-);
-console.log(
-    '%cCurrently in development. Join the waitlist!',
-    'color: #64748b; font-size: 12px;'
-);
+})();
