@@ -1,0 +1,116 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>We Beat Specialized Databases at Their Own Game</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: comp-table
+    elementType: table
+    bounds: [60, 110, 1160, 420]
+    tableStyle: "$default"
+    content:
+      rows:
+        - cells:
+            - text: "Feature"
+            - text: "VedaDB"
+            - text: "PostgreSQL"
+            - text: "MongoDB"
+            - text: "Elasticsearch"
+            - text: "Neo4j"
+        - cells:
+            - text: "Multi-Model"
+            - text: "<b style=\"color: #10B981;\">9 Engines</b>"
+            - text: "1 + extensions"
+            - text: "1 (Document)"
+            - text: "1 (Search)"
+            - text: "1 (Graph)"
+        - cells:
+            - text: "Query Fusion"
+            - text: "<b style=\"color: #10B981;\">Yes</b>"
+            - text: "No"
+            - text: "No"
+            - text: "No"
+            - text: "No"
+        - cells:
+            - text: "AI Optimization"
+            - text: "<b style=\"color: #10B981;\">Yes</b>"
+            - text: "No"
+            - text: "No"
+            - text: "No"
+            - text: "No"
+        - cells:
+            - text: "Unified Security"
+            - text: "<b style=\"color: #10B981;\">Yes</b>"
+            - text: "Partial"
+            - text: "Partial"
+            - text: "No"
+            - text: "No"
+        - cells:
+            - text: "Ops Overhead"
+            - text: "<b style=\"color: #10B981;\">1x</b>"
+            - text: "1x"
+            - text: "1x"
+            - text: "1x"
+            - text: "1x"
+        - cells:
+            - text: "Databases Replaced"
+            - text: "<b style=\"color: #10B981;\">5-7</b>"
+            - text: "1"
+            - text: "1"
+            - text: "1"
+            - text: "1"
+
+  - elementId: bottom-callout
+    elementType: shape
+    bounds: [60, 555, 1160, 70]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+      border:
+        style: solid
+        width: 1
+        color: "#10B981"
+
+  - elementId: bottom-text
+    elementType: text
+    bounds: [100, 565, 1080, 50]
+    content:
+      style: "$body"
+      fontSize: 22
+      text: |
+        <p style="text-align: center;">Replace <b style="color: #10B981;">5-7 databases</b> with 1  |  Save <b style="color: #10B981;">60%</b> on TCO  |  <b style="color: #10B981;">3-6x faster</b> on complex queries</p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">07</p>
