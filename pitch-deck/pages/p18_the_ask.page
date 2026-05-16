@@ -1,0 +1,273 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "17"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 50, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>Raising $5M Seed — 18-Month Runway to Product-Market Fit</p>
+
+  # ===== Top Row: Two Big Numbers =====
+  # Left: $5M Seed
+  - elementId: ask-number
+    elementType: text
+    bounds: [60, 110, 560, 70]
+    content:
+      style: "$bigNumber"
+      fontSize: 48
+      color: "$accent"
+      fontFamily: Liter
+      wrap: false
+      align: [left, middle]
+      text: |
+        <p>$5M</p>
+  - elementId: ask-label
+    elementType: text
+    bounds: [60, 180, 560, 28]
+    content:
+      text: Seed Round
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: ask-sub
+    elementType: text
+    bounds: [60, 210, 560, 24]
+    content:
+      text: |
+        <p>On $25M post-money valuation</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$secondary"
+      wrap: false
+
+  # Right: 18 Month Runway
+  - elementId: runway-number
+    elementType: text
+    bounds: [660, 110, 560, 70]
+    content:
+      style: "$bigNumber"
+      fontSize: 48
+      color: "$accent"
+      fontFamily: Liter
+      wrap: false
+      align: [left, middle]
+      text: |
+        <p>18</p>
+  - elementId: runway-label
+    elementType: text
+    bounds: [660, 180, 560, 28]
+    content:
+      text: Month Runway
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: runway-sub
+    elementType: text
+    bounds: [660, 210, 560, 24]
+    content:
+      text: |
+        <p>To product-market fit &amp; Series A</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$secondary"
+      wrap: false
+
+  # ===== Middle Left: Pie Chart =====
+  - elementId: funds-pie
+    elementType: chart
+    bounds: [60, 250, 500, 280]
+    type: pie
+    title:
+      text: Use of Funds
+      color: "$primary"
+      fontSize: 16
+    data:
+      - {category: Engineering, value: 40}
+      - {category: Cloud Infra, value: 25}
+      - {category: GTM, value: 20}
+      - {category: Operations, value: 15}
+    x: category
+    y: [value]
+    colors: ["$primary", "$muted", "$accent", "$secondary"]
+    options:
+      fontFamily: QuattrocentoSans
+    legend:
+      show: true
+      position: right
+      color: "$text"
+      fontSize: 12
+    dataLabels:
+      show: true
+      content: percentage
+      color: "$light"
+      fontSize: 12
+      numberFormat: "0%"
+
+  # ===== Middle Right: Milestone Timeline =====
+  - elementId: milestone-header
+    elementType: text
+    bounds: [600, 250, 620, 28]
+    content:
+      text: |
+        <p><strong>MILESTONES</strong></p>
+      fontSize: 18
+      fontFamily: Liter
+      color: "$primary"
+      wrap: false
+
+  # Timeline horizontal line
+  - elementId: timeline-line
+    elementType: shape
+    bounds: [600, 340, 600, 0]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+    arrow: [null, "arrow"]
+
+  # M6
+  - elementId: m6-dot
+    elementType: shape
+    bounds: [618, 334, 12, 12]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: m6-label
+    elementType: text
+    bounds: [590, 300, 80, 28]
+    content:
+      text: |
+        <p><strong>M6</strong></p>
+      fontSize: 16
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+      align: [center, bottom]
+  - elementId: m6-desc
+    elementType: text
+    bounds: [580, 360, 120, 60]
+    content:
+      text: |
+        <p>Public beta, 100+ partners</p>
+      fontSize: 13
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+      align: [center, top]
+
+  # M12
+  - elementId: m12-dot
+    elementType: shape
+    bounds: [868, 334, 12, 12]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: m12-label
+    elementType: text
+    bounds: [840, 300, 80, 28]
+    content:
+      text: |
+        <p><strong>M12</strong></p>
+      fontSize: 16
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+      align: [center, bottom]
+  - elementId: m12-desc
+    elementType: text
+    bounds: [820, 360, 140, 60]
+    content:
+      text: |
+        <p>General availability, $1M ARR</p>
+      fontSize: 13
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+      align: [center, top]
+
+  # M18
+  - elementId: m18-dot
+    elementType: shape
+    bounds: [1118, 334, 12, 12]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: m18-label
+    elementType: text
+    bounds: [1090, 300, 80, 28]
+    content:
+      text: |
+        <p><strong>M18</strong></p>
+      fontSize: 16
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+      align: [center, bottom]
+  - elementId: m18-desc
+    elementType: text
+    bounds: [1060, 360, 150, 60]
+    content:
+      text: |
+        <p>Series A ready, 500+ deployments</p>
+      fontSize: 13
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+      align: [center, top]
+
+  # ===== Bottom: Expected Return =====
+  - elementId: bottom-return
+    elementType: text
+    bounds: [60, 560, 1160, 50]
+    content:
+      text: |
+        <p style="text-align:center"><span style="font-size:18px; color:$primary;">Expected Return: <strong>10-20x</strong> at Series B/C | Comparable exits: CockroachDB <strong>$5B</strong>, MongoDB <strong>$30B+</strong></span></p>
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+      align: [center, middle]
