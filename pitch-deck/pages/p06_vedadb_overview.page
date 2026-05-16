@@ -1,0 +1,492 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "06"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 55, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>VedaDB: One Engine. Seven Data Models.</p>
+
+  # --- 7 Model Cards (Row 1) ---
+  # Card backgrounds
+  - elementId: card-bg-1
+    elementType: shape
+    bounds: [60, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-2
+    elementType: shape
+    bounds: [227, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-3
+    elementType: shape
+    bounds: [394, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-4
+    elementType: shape
+    bounds: [561, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-5
+    elementType: shape
+    bounds: [728, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-6
+    elementType: shape
+    bounds: [895, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-bg-7
+    elementType: shape
+    bounds: [1062, 120, 155, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+
+  # Card 1: SQL
+  - elementId: card-icon-1
+    elementType: icon
+    bounds: [124, 135, 28, 28]
+    iconName: "fas:database"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-1
+    elementType: text
+    bounds: [70, 175, 135, 28]
+    content:
+      text: SQL
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-1
+    elementType: text
+    bounds: [65, 210, 145, 22]
+    content:
+      text: Relational queries
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 2: Vector
+  - elementId: card-icon-2
+    elementType: icon
+    bounds: [291, 135, 28, 28]
+    iconName: "fas:brain"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-2
+    elementType: text
+    bounds: [237, 175, 135, 28]
+    content:
+      text: Vector
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-2
+    elementType: text
+    bounds: [232, 210, 145, 22]
+    content:
+      text: Similarity search
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 3: Graph
+  - elementId: card-icon-3
+    elementType: icon
+    bounds: [458, 135, 28, 28]
+    iconName: "fas:project-diagram"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-3
+    elementType: text
+    bounds: [404, 175, 135, 28]
+    content:
+      text: Graph
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-3
+    elementType: text
+    bounds: [394, 210, 155, 22]
+    content:
+      text: "Traversal & Graph"
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 4: Document
+  - elementId: card-icon-4
+    elementType: icon
+    bounds: [625, 135, 28, 28]
+    iconName: "fas:file-code"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-4
+    elementType: text
+    bounds: [571, 175, 135, 28]
+    content:
+      text: Document
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-4
+    elementType: text
+    bounds: [566, 210, 145, 22]
+    content:
+      text: JSON storage
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 5: Cache
+  - elementId: card-icon-5
+    elementType: icon
+    bounds: [792, 135, 28, 28]
+    iconName: "fas:bolt"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-5
+    elementType: text
+    bounds: [738, 175, 135, 28]
+    content:
+      text: Cache
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-5
+    elementType: text
+    bounds: [733, 210, 145, 22]
+    content:
+      text: In-memory KV
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 6: Search
+  - elementId: card-icon-6
+    elementType: icon
+    bounds: [959, 135, 28, 28]
+    iconName: "fas:magnifying-glass"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-6
+    elementType: text
+    bounds: [905, 175, 135, 28]
+    content:
+      text: Search
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-6
+    elementType: text
+    bounds: [900, 210, 145, 22]
+    content:
+      text: Full-text indexing
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # Card 7: Time Series
+  - elementId: card-icon-7
+    elementType: icon
+    bounds: [1126, 135, 28, 28]
+    iconName: "fas:chart-line"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-name-7
+    elementType: text
+    bounds: [1072, 175, 135, 28]
+    content:
+      text: Time Series
+      fontSize: 16
+      color: "$light"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: card-tag-7
+    elementType: text
+    bounds: [1067, 210, 145, 22]
+    content:
+      text: Timestamped data
+      fontSize: 13
+      color: "$background"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # --- Below cards: Replaces 7 DBs statement ---
+  - elementId: replaces-text
+    elementType: text
+    bounds: [60, 300, 1160, 34]
+    content:
+      text: |
+        <p style="text-align:center"><span style="font-size:22px; color:$primary;"><strong>Replaces 7 separate databases with one unified engine</strong></span></p>
+      fontSize: 22
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+      align: [center, middle]
+
+  # --- 7 DB names with checkmarks ---
+  - elementId: db-rep-1
+    elementType: text
+    bounds: [60, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> PostgreSQL &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-2
+    elementType: text
+    bounds: [218, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> Neo4j &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-3
+    elementType: text
+    bounds: [376, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> MongoDB &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-4
+    elementType: text
+    bounds: [534, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> Redis &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-5
+    elementType: text
+    bounds: [692, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> Elastic &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-6
+    elementType: text
+    bounds: [850, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> InfluxDB &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+  - elementId: db-rep-7
+    elementType: text
+    bounds: [1008, 350, 148, 24]
+    content:
+      text: |
+        <p><span style="color:#228B22;">&#10003;</span> Pinecone &#8594;</p>
+      fontSize: 14
+      color: "$text"
+      fontFamily: QuattrocentoSans
+      wrap: false
+      align: [center, middle]
+
+  # VEDADB center badge
+  - elementId: vedadb-badge-bg
+    elementType: shape
+    bounds: [510, 390, 260, 50]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: vedadb-badge-text
+    elementType: text
+    bounds: [510, 390, 260, 50]
+    content:
+      text: VEDADB
+      fontSize: 24
+      color: "$light"
+      fontFamily: Liter
+      wrap: false
+      align: [center, middle]
+
+  # Arrows from DB replacements to VEDADB (shape lines)
+  - elementId: arrow-1
+    elementType: shape
+    bounds: [134, 374, 441, 16]
+    shapeName: straightConnector1
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-2
+    elementType: shape
+    bounds: [292, 374, 283, 16]
+    shapeName: straightConnector1
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-3
+    elementType: shape
+    bounds: [450, 374, 125, 16]
+    shapeName: straightConnector1
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-4
+    elementType: shape
+    bounds: [608, 374, 32, 16]
+    shapeName: straightConnector1
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-5
+    elementType: shape
+    bounds: [766, 374, 125, 16]
+    shapeName: straightConnector1
+    flip: [true, false]
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-6
+    elementType: shape
+    bounds: [924, 374, 283, 16]
+    shapeName: straightConnector1
+    flip: [true, false]
+    arrow: [null, "arrow"]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+  - elementId: arrow-7
+    elementType: shape
+    bounds: [640, 374, 440, 16]
+    shapeName: straightConnector1
+    arrow: ["arrow", null]
+    border:
+      style: solid
+      width: 2
+      color: "$accent"
+
+  # --- Bottom highlight ---
+  - elementId: bottom-highlight
+    elementType: text
+    bounds: [60, 470, 1160, 60]
+    content:
+      text: |
+        <p style="text-align:center"><span style="font-size:20px;">Single API. Single Driver. Single Query Language. &#8594; <span style="color:$accent;"><strong>80% less</strong></span> integration overhead</span></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+      align: [center, middle]
