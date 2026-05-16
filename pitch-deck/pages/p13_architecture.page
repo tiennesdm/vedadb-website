@@ -1,0 +1,128 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "13"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 50, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>Rust Core. WebAssembly. Production-Ready.</p>
+
+  # Left: 6 architecture bullets
+  - elementId: arch-bullets
+    elementType: text
+    bounds: [60, 115, 640, 300]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.6
+      text: |
+        <ul>
+        <li><strong>Architecture:</strong> Rust core + WebAssembly extensibility + Raft consensus</li>
+        <li><strong>Deployment:</strong> Docker, Kubernetes, bare metal — cloud-native</li>
+        <li><strong>Security:</strong> Argon2id, TLS 1.3, RBAC, SQL injection prevention</li>
+        <li><strong>Protocols:</strong> REST API, TCP wire, WebSocket real-time</li>
+        <li><strong>Monitoring:</strong> Prometheus/Grafana, Loki logging</li>
+        <li><strong>Testing:</strong> 220 test cases, 100% pass rate, Grade A+</li>
+        </ul>
+
+  # Right: Comparison table
+  - elementId: comparison-table
+    elementType: table
+    bounds: [720, 115, 500, 340]
+    columnWidths: [0.40, 0.30, 0.30]
+    rowHeights: [0.167, 0.167, 0.167, 0.167, 0.167, 0.165]
+    style:
+      headerFill: "$muted"
+      headerColor: "$light"
+      headerBold: true
+      bodyFill:
+        - "$light"
+        - "$background"
+      bodyColor: "$text"
+      border:
+        style: solid
+        width: 1
+        color: "$border"
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+    rows:
+      - - content:
+            text: Metric
+        - content:
+            text: VedaDB
+        - content:
+            text: 7-DB Stack
+      - - content:
+            text: Setup Time
+        - content:
+            text: |
+              <p><strong>10 min</strong></p>
+        - content:
+            text: 5 days
+      - - content:
+            text: Query Languages
+        - content:
+            text: |
+              <p><strong>1</strong></p>
+        - content:
+            text: "7"
+      - - content:
+            text: Memory
+        - content:
+            text: |
+              <p><strong>1x</strong></p>
+        - content:
+            text: 7x
+      - - content:
+            text: Monthly TCO
+        - content:
+            text: |
+              <p><strong>$10K</strong></p>
+        - content:
+            text: "$50K+"
+      - - content:
+            text: Availability
+        - content:
+            text: |
+              <p><strong>99.9%</strong></p>
+        - content:
+            text: 99.5%
