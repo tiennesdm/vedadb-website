@@ -8,12 +8,12 @@
 
 <p align="center">
   <b>One Database. Every Workload.</b><br>
-  <a href="mailto:shubahm.mehta@gmail.com">📧 shubahm.mehta@gmail.com</a>
+  <a href="mailto:contact@vedadb.com">📧 contact@vedadb.com</a>
 </p>
 
 ---
 
-> **Founder:** Shubahm Mehta | **Email:** shubahm.mehta@gmail.com | **Status:** Beta Ready — Final Testing
+> **Founder:** Shubahm Mehta | **Email:** contact@vedadb.com | **Status:** Beta Ready — Final Testing
 
 ---
 
@@ -57,7 +57,7 @@ VedaDB is a unified multi-model database that combines **7 specialized engines**
 ## 📧 Contact
 
 **Founder:** Shubahm Mehta  
-**Email:** [shubahm.mehta@gmail.com](mailto:shubahm.mehta@gmail.com)  
+**Email:** [contact@vedadb.com](mailto:contact@vedadb.com)  
 **Pitch Deck:** [tiennesdm.github.io/vedadb-pitch](https://tiennesdm.github.io/vedadb-pitch)  
 **Full Pitch:** [tiennesdm.github.io/vedadb-pitch-deck](https://tiennesdm.github.io/vedadb-pitch-deck)
 
