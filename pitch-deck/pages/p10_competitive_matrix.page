@@ -1,0 +1,490 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "10"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 50, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>12 Competitors Analyzed — None Unify All 7 Data Models</p>
+
+  # Competitive matrix table
+  - elementId: matrix-table
+    elementType: table
+    bounds: [30, 100, 1220, 530]
+    columnWidths: [0.16, 0.07, 0.08, 0.08, 0.08, 0.08, 0.08, 0.08, 0.12, 0.17]
+    rowHeights: [0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077, 0.077]
+    style: "$default"
+    rows:
+      # Header
+      - - content:
+            text: Database
+            fontSize: 13
+        - content:
+            text: Models
+            fontSize: 13
+        - content:
+            text: SQL
+            fontSize: 13
+        - content:
+            text: Vec
+            fontSize: 13
+        - content:
+            text: Gra
+            fontSize: 13
+        - content:
+            text: Doc
+            fontSize: 13
+        - content:
+            text: Cac
+            fontSize: 13
+        - content:
+            text: Srch
+            fontSize: 13
+        - content:
+            text: TS
+            fontSize: 13
+        - content:
+            text: Unified?
+            fontSize: 13
+      # VedaDB
+      - - content:
+            text: |
+              <p><strong>VedaDB</strong></p>
+            fontSize: 13
+          fill:
+            type: solid
+            color: "$accent"
+        - content:
+            text: "7"
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>Yes</strong></p>
+            fontSize: 13
+        - content:
+            text: |
+              <p><span style="color:$accent;"><strong>YES</strong></span></p>
+            fontSize: 13
+      # Elasticsearch
+      - - content:
+            text: Elasticsearch
+            fontSize: 13
+        - content:
+            text: "5"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # Cosmos DB
+      - - content:
+            text: Cosmos DB
+            fontSize: 13
+        - content:
+            text: "5"
+            fontSize: 13
+        - content:
+            text: |
+              <p>Yes(via API)</p>
+            fontSize: 12
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: |
+              <p><strong>No</strong></p>
+            fontSize: 13
+      # Redis Stack
+      - - content:
+            text: Redis Stack
+            fontSize: 13
+        - content:
+            text: "4"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: |
+              <p><span style="color:#cc0000;">DEPRECATED</span></p>
+            fontSize: 11
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # PostgreSQL+Ext
+      - - content:
+            text: |
+              <p>PostgreSQL+Ext</p>
+            fontSize: 12
+        - content:
+            text: "4-5"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: |
+              <p>Yes(AGE)</p>
+            fontSize: 12
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: Fragmented
+            fontSize: 11
+      # MongoDB Atlas
+      - - content:
+            text: MongoDB Atlas
+            fontSize: 13
+        - content:
+            text: "3"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # Neo4j
+      - - content:
+            text: Neo4j
+            fontSize: 13
+        - content:
+            text: "2"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # Couchbase
+      - - content:
+            text: Couchbase
+            fontSize: 13
+        - content:
+            text: "2"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # TimescaleDB
+      - - content:
+            text: TimescaleDB
+            fontSize: 13
+        - content:
+            text: "2"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # InfluxDB
+      - - content:
+            text: InfluxDB
+            fontSize: 13
+        - content:
+            text: "2"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "Yes"
+            fontSize: 13
+        - content:
+            text: "No"
+            fontSize: 13
+      # FaunaDB
+      - - content:
+            text: |
+              <p><strong>FaunaDB</strong></p>
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "3"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: |
+              <p><span style="color:#cc0000;"><strong>SHUTDOWN</strong></span></p>
+            fontSize: 11
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: "-"
+            fontSize: 13
+          fill:
+            type: solid
+            color: "#ffcccc"
+        - content:
+            text: |
+              <p><span style="color:#cc0000;"><strong>DEAD</strong></span></p>
+            fontSize: 12
+          fill:
+            type: solid
+            color: "#ffcccc"
+
+  # Bottom note about FaunaDB
+  - elementId: fauna-note
+    elementType: text
+    bounds: [60, 645, 1160, 28]
+    content:
+      text: |
+        <p style="text-align:center"><span style="color:#cc0000;">FaunaDB shut down May 2025 — 80,000 teams forced to migrate</span></p>
+      fontSize: 14
+      fontFamily: QuattrocentoSans
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
