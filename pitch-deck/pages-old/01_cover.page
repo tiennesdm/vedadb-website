@@ -1,0 +1,64 @@
+pageType: cover
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: accent-line
+    elementType: shape
+    bounds: [490, 260, 300, 3]
+    shape:
+      shapeName: "rectangle"
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: title-text
+    elementType: text
+    bounds: [200, 150, 880, 90]
+    content:
+      style: "$coverTitle"
+      text: |
+        <p style="text-align: center;"><b>VEDADB</b></p>
+
+  - elementId: subtitle
+    elementType: text
+    bounds: [200, 300, 880, 50]
+    content:
+      style: "$subtitle"
+      text: |
+        <p style="text-align: center;">The World's First Zero-Compromise Multi-Model Database</p>
+
+  - elementId: tagline
+    elementType: text
+    bounds: [200, 380, 880, 60]
+    content:
+      style: "$body"
+      color: "#8B95A5"
+      text: |
+        <p style="text-align: center;">SQL + Vector + Graph + Document + Cache + Search + TimeSeries</p>
+        <p style="text-align: center;">— All in One Engine —</p>
+
+  - elementId: version-label
+    elementType: text
+    bounds: [440, 520, 400, 30]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: center;">v0.3.0  |  Seed Round  |  2026</p>
+
+  - elementId: bottom-line
+    elementType: shape
+    bounds: [0, 680, 1280, 40]
+    shape:
+      shapeName: "rectangle"
+      fill:
+        type: solid
+        color: "#1A1F36"
+
+  - elementId: bottom-text
+    elementType: text
+    bounds: [40, 685, 400, 30]
+    content:
+      style: "$annotation"
+      text: |
+        <p>github.com/tiennesdm/vedadb-server-code</p>
