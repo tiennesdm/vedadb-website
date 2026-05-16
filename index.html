@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaDB — The Future of Database is Multi-Model</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">◈</span>
+                <span>VedaDB</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#engines">Engines</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank">Pitch Deck</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Currently in Development
+            </div>
+            <h1 class="hero-title">
+                One Database.<br>
+                <span class="gradient-text">Every Workload.</span>
+            </h1>
+            <p class="hero-subtitle">
+                We're building VedaDB — a unified multi-model database that combines 
+                <strong>7 specialized engines</strong> into a single, coherent system. 
+                No more database sprawl. No more integration headaches.
+            </p>
+            <div class="hero-cta">
+                <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist →</a>
+                <a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank" class="btn btn-outline btn-lg">View Pitch Deck</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Database Engines</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Unified Platform</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Compromises</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="vision">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Problem</span>
+                <h2 class="section-title">Why Are We Doing This?</h2>
+                <p class="section-desc">
+                    Modern applications need multiple data models — but running 5-7 separate databases 
+                    is a nightmare. $50B+ is wasted every year on database sprawl.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📚</div>
+                    <h3>SQL for Transactions</h3>
+                    <p>Relational data, joins, ACID compliance</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <h3>Vector for AI Search</h3>
+                    <p>Similarity search, embeddings, RAG</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🕸️</div>
+                    <h3>Graph for Relationships</h3>
+                    <p>Connected data, recommendations, fraud</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📄</div>
+                    <h3>Document for Flexibility</h3>
+                    <p>JSON, schema-less, rapid prototyping</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚡</div>
+                    <h3>Cache for Speed</h3>
+                    <p>Sub-millisecond reads, hot data</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔎</div>
+                    <h3>Search for Discovery</h3>
+                    <p>Full-text, faceted, fuzzy matching</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📈</div>
+                    <h3>Time Series for Metrics</h3>
+                    <p>IoT, monitoring, temporal analysis</p>
+                </div>
+                <div class="problem-card problem-card-highlight">
+                    <div class="problem-icon">❌</div>
+                    <h3>7 Databases = 7 Problems</h3>
+                    <p>Different query languages, data pipelines, backup systems, monitoring, teams...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution: 7 Engines -->
+    <section class="engines" id="engines">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Solution</span>
+                <h2 class="section-title">7 Engines. 1 System. Zero Compromises.</h2>
+                <p class="section-desc">
+                    VedaDB unifies all 7 data models under a single query layer. 
+                    One connection string. One admin panel. One backup strategy.
+                </p>
+            </div>
+            <div class="engines-grid">
+                <div class="engine-card">
+                    <div class="engine-icon engine-sql">SQL</div>
+                    <h3>Relational</h3>
+                    <p>Full ACID compliance, complex joins, window functions</p>
+                    <span class="engine-status">Planned</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-vector">V</div>
+                    <h3>Vector</h3>
+                    <p>HNSW indexing, cosine similarity, embeddings for AI/RAG</p>
+                    <span class="engine-status">In Development</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-graph">G</div>
+                    <h3>Graph</h3>
+                    <p>Cypher queries, traversal, PageRank, community detection</p>
+                    <span class="engine-status">Planned</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-doc">D</div>
+                    <h3>Document</h3>
+                    <p>JSON-native, flexible schema, nested queries</p>
+                    <span class="engine-status">In Development</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-cache">C</div>
+                    <h3>Cache</h3>
+                    <p>In-memory speed, LRU eviction, TTL support</p>
+                    <span class="engine-status">Planned</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-search">S</div>
+                    <h3>Search</h3>
+                    <p>Full-text, fuzzy matching, faceted search, relevance scoring</p>
+                    <span class="engine-status">Planned</span>
+                </div>
+                <div class="engine-card">
+                    <div class="engine-icon engine-ts">T</div>
+                    <h3>Time Series</h3>
+                    <p>Columnar compression, rollups, retention policies</p>
+                    <span class="engine-status">Planned</span>
+                </div>
+            </div>
+            <div class="engines-note">
+                <div class="note-icon">💡</div>
+                <p>
+                    <strong>Key Innovation:</strong> Query across multiple engines in a single query. 
+                    Join SQL tables with vector embeddings. Filter graph results with full-text search. 
+                    No other database does this natively.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Preview -->
+    <section class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Architecture</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-desc">
+                    A unified query processor sits above 7 specialized storage engines, 
+                    giving you the best of each world without the operational overhead.
+                </p>
+            </div>
+            <div class="arch-diagram">
+                <div class="arch-layer arch-query">
+                    <div class="arch-label">Query Layer</div>
+                    <div class="arch-items">
+                        <span>SQL Parser</span>
+                        <span>Query Planner</span>
+                        <span>Optimizer</span>
+                        <span>Router</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-layer arch-engines">
+                    <div class="arch-label">7 Storage Engines</div>
+                    <div class="arch-items">
+                        <span class="eng-sql">SQL</span>
+                        <span class="eng-vector">Vector</span>
+                        <span class="eng-graph">Graph</span>
+                        <span class="eng-doc">Document</span>
+                        <span class="eng-cache">Cache</span>
+                        <span class="eng-search">Search</span>
+                        <span class="eng-ts">Time Series</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">▼</div>
+                <div class="arch-layer arch-storage">
+                    <div class="arch-label">Storage Layer</div>
+                    <div class="arch-items">
+                        <span>WAL</span>
+                        <span>Replication</span>
+                        <span>Compression</span>
+                        <span>Encryption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="market">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Market</span>
+                <h2 class="section-title">Massive Opportunity</h2>
+            </div>
+            <div class="market-grid">
+                <div class="market-card">
+                    <span class="market-number">$132B</span>
+                    <span class="market-label">DBMS Market (2024)</span>
+                </div>
+                <div class="market-card">
+                    <span class="market-number">$406B</span>
+                    <span class="market-label">Projected by 2034</span>
+                </div>
+                <div class="market-card">
+                    <span class="market-number">16.2%</span>
+                    <span class="market-label">Multi-Model CAGR</span>
+                </div>
+                <div class="market-card">
+                    <span class="market-number">$50B+</span>
+                    <span class="market-label">Wasted on DB Sprawl</span>
+                </div>
+            </div>
+            <div class="market-proof">
+                <p>Recent validation: <strong>IBM acquired Confluent for $11B</strong>, <strong>Databricks acquired Neon for $1B</strong>, 
+                <strong>MongoDB acquired Voyage AI for $220M</strong>. The database consolidation wave is here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Roadmap</span>
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-desc">Building in public. Shipping incrementally.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item timeline-done">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <span class="timeline-phase">Phase 0 — Now</span>
+                        <h3>Architecture & Core Engine</h3>
+                        <ul>
+                            <li>Query processor design</li>
+                            <li>SQL + Document engine prototypes</li>
+                            <li>Storage layer foundation</li>
+                            <li>Go project structure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-active">
+                    <div class="timeline-marker">●</div>
+                    <div class="timeline-content">
+                        <span class="timeline-phase">Phase 1 — 2026</span>
+                        <h3>Alpha Release</h3>
+                        <ul>
+                            <li>SQL engine (full ANSI SQL)</li>
+                            <li>Document engine (MongoDB-compatible API)</li>
+                            <li>Vector engine (HNSW indexing)</li>
+                            <li>REST API + Python driver</li>
+                            <li>Single-node deployment (Docker)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">○</div>
+                    <div class="timeline-content">
+                        <span class="timeline-phase">Phase 2 — 2027</span>
+                        <h3>Beta Release</h3>
+                        <ul>
+                            <li>Graph + Cache + Search engines</li>
+                            <li>Time series engine</li>
+                            <li>Multi-node clustering (Raft)</li>
+                            <li>All 8 language drivers</li>
+                            <li>Web workbench UI</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">○</div>
+                    <div class="timeline-content">
+                        <span class="timeline-phase">Phase 3 — 2028</span>
+                        <h3>General Availability</h3>
+                        <ul>
+                            <li>Production-ready v1.0</li>
+                            <li>Horizontal sharding</li>
+                            <li>Cloud-managed service</li>
+                            <li>Enterprise features (RBAC, audit)</li>
+                            <li>Professional support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="waitlist" id="waitlist">
+        <div class="container">
+            <div class="waitlist-content">
+                <h2 class="waitlist-title">Be the First to Experience <span class="gradient-text">VedaDB</span></h2>
+                <p class="waitlist-desc">
+                    Join our waitlist to get early access to the alpha release, 
+                    exclusive updates, and a chance to shape the product.
+                </p>
+                <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+                    <input type="email" class="waitlist-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary btn-lg">Join Waitlist →</button>
+                </form>
+                <p class="waitlist-note">No spam. Unsubscribe anytime. We respect your privacy.</p>
+                <div class="waitlist-social">
+                    <a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Star on GitHub
+                    </a>
+                    <a href="mailto:hello@vedadb.io" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        hello@vedadb.io
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">◈</span>
+                    <span>VedaDB</span>
+                    <p>Building the future of databases.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Project</h4>
+                        <a href="#vision">Vision</a>
+                        <a href="#engines">Engines</a>
+                        <a href="#roadmap">Roadmap</a>
+                        <a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank">Pitch Deck</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Community</h4>
+                        <a href="https://github.com/tiennesdm/vedadb-pitch-deck" target="_blank">GitHub</a>
+                        <a href="mailto:hello@vedadb.io">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 VedaDB. All rights reserved. Built with passion in India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
