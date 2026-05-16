@@ -1,0 +1,335 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>Developer-Led Growth with Enterprise Sales</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: funnel-label
+    elementType: text
+    bounds: [60, 105, 500, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>GROWTH FUNNEL</b></p>
+
+  - elementId: funnel-1-bg
+    elementType: shape
+    bounds: [60, 140, 580, 50]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: funnel-1-text
+    elementType: text
+    bounds: [80, 145, 540, 40]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p><b style="color: #D4A843;">Developer Love</b> — Open source, great docs, 8 language drivers</p>
+
+  - elementId: funnel-arrow-1
+    elementType: shape
+    bounds: [330, 190, 20, 15]
+    shape:
+      shapeName: triangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: funnel-2-bg
+    elementType: shape
+    bounds: [80, 205, 540, 50]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: funnel-2-text
+    elementType: text
+    bounds: [100, 210, 500, 40]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p><b style="color: #D4A843;">Team Adoption</b> — Internal projects, team-wide deployment</p>
+
+  - elementId: funnel-arrow-2
+    elementType: shape
+    bounds: [330, 255, 20, 15]
+    shape:
+      shapeName: triangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: funnel-3-bg
+    elementType: shape
+    bounds: [100, 270, 500, 50]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#10B981"
+
+  - elementId: funnel-3-text
+    elementType: text
+    bounds: [120, 275, 460, 40]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p><b style="color: #10B981;">Enterprise Contract</b> — Cloud upgrade, custom SLAs, support</p>
+
+  - elementId: phases-label
+    elementType: text
+    bounds: [60, 350, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>ROADMAP PHASES</b></p>
+
+  - elementId: phase-1-bg
+    elementType: shape
+    bounds: [60, 385, 270, 140]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: phase-1-badge
+    elementType: shape
+    bounds: [60, 385, 270, 30]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: phase-1-label
+    elementType: text
+    bounds: [70, 388, 250, 25]
+    content:
+      style: "$body"
+      fontSize: 14
+      color: "#0D1117"
+      text: |
+        <p><b>PHASE 1 — NOW</b></p>
+
+  - elementId: phase-1-text
+    elementType: text
+    bounds: [75, 425, 240, 90]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>Open source adoption</p>
+        <p>Community building</p>
+        <p>Developer advocacy</p>
+        <p style="color: #8B95A5; font-size: 14px;">Goal: 10K MAU</p>
+
+  - elementId: phase-2-bg
+    elementType: shape
+    bounds: [345, 385, 270, 140]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: phase-2-badge
+    elementType: shape
+    bounds: [345, 385, 270, 30]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: phase-2-label
+    elementType: text
+    bounds: [355, 388, 250, 25]
+    content:
+      style: "$body"
+      fontSize: 14
+      color: "#0D1117"
+      text: |
+        <p><b>PHASE 2 — Q3 2026</b></p>
+
+  - elementId: phase-2-text
+    elementType: text
+    bounds: [360, 425, 240, 90]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>Cloud platform launch</p>
+        <p>Pay-as-you-scale</p>
+        <p>Managed hosting</p>
+        <p style="color: #8B95A5; font-size: 14px;">Goal: $500K ARR</p>
+
+  - elementId: phase-3-bg
+    elementType: shape
+    bounds: [630, 385, 270, 140]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#10B981"
+
+  - elementId: phase-3-badge
+    elementType: shape
+    bounds: [630, 385, 270, 30]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#10B981"
+
+  - elementId: phase-3-label
+    elementType: text
+    bounds: [640, 388, 250, 25]
+    content:
+      style: "$body"
+      fontSize: 14
+      color: "#0D1117"
+      text: |
+        <p><b>PHASE 3 — 2027</b></p>
+
+  - elementId: phase-3-text
+    elementType: text
+    bounds: [645, 425, 240, 90]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>Enterprise sales team</p>
+        <p>SOC2 compliance</p>
+        <p>Priority SLAs</p>
+        <p style="color: #8B95A5; font-size: 14px;">Goal: $3M ARR</p>
+
+  - elementId: phase-4-bg
+    elementType: shape
+    bounds: [915, 385, 270, 140]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#10B981"
+
+  - elementId: phase-4-badge
+    elementType: shape
+    bounds: [915, 385, 270, 30]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#10B981"
+
+  - elementId: phase-4-label
+    elementType: text
+    bounds: [925, 388, 250, 25]
+    content:
+      style: "$body"
+      fontSize: 14
+      color: "#0D1117"
+      text: |
+        <p><b>PHASE 4 — 2028</b></p>
+
+  - elementId: phase-4-text
+    elementType: text
+    bounds: [930, 425, 240, 90]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>Channel partners</p>
+        <p>Global expansion</p>
+        <p>Managed marketplace</p>
+        <p style="color: #8B95A5; font-size: 14px;">Goal: $15M ARR</p>
+
+  - elementId: channels-label
+    elementType: text
+    bounds: [60, 555, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>KEY CHANNELS</b></p>
+
+  - elementId: channels
+    elementType: text
+    bounds: [60, 585, 1160, 30]
+    content:
+      style: "$body"
+      fontSize: 18
+      color: "#8B95A5"
+      text: |
+        <p>GitHub  |  HackerNews  |  Dev.to  |  Conference talks  |  Discord community  |  Enterprise outbound</p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">09</p>
