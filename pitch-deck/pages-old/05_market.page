@@ -1,0 +1,284 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>The $100B Database Market Is Fragmented — We Unify It</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: tam-label
+    elementType: text
+    bounds: [60, 110, 300, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>TAM — TOTAL ADDRESSABLE MARKET</b></p>
+
+  - elementId: tam-bg
+    elementType: shape
+    bounds: [60, 140, 380, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+      border:
+        style: solid
+        width: 2
+        color: "#2D3648"
+
+  - elementId: tam-number
+    elementType: text
+    bounds: [80, 145, 340, 65]
+    content:
+      style: "$bigNumber"
+      fontSize: 48
+      text: |
+        <p><b>$100B</b></p>
+
+  - elementId: tam-desc
+    elementType: text
+    bounds: [80, 210, 340, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p>Global Database Market, 2025</p>
+
+  - elementId: sam-label
+    elementType: text
+    bounds: [460, 110, 300, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>SAM — SERVICEABLE ADDRESSABLE</b></p>
+
+  - elementId: sam-bg
+    elementType: shape
+    bounds: [460, 140, 380, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+      border:
+        style: solid
+        width: 2
+        color: "#D4A843"
+
+  - elementId: sam-number
+    elementType: text
+    bounds: [480, 145, 340, 65]
+    content:
+      style: "$bigNumber"
+      fontSize: 48
+      text: |
+        <p><b>$32B</b></p>
+
+  - elementId: sam-desc
+    elementType: text
+    bounds: [480, 210, 340, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p>Multi-Model + Vector DB Segment</p>
+
+  - elementId: som-label
+    elementType: text
+    bounds: [860, 110, 300, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>SOM — SERVICEABLE OBTAINABLE</b></p>
+
+  - elementId: som-bg
+    elementType: shape
+    bounds: [860, 140, 360, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+      border:
+        style: solid
+        width: 2
+        color: "#10B981"
+
+  - elementId: som-number
+    elementType: text
+    bounds: [880, 145, 320, 65]
+    content:
+      style: "$bigNumber"
+      fontSize: 48
+      color: "#10B981"
+      text: |
+        <p><b>$2.5B</b></p>
+
+  - elementId: som-desc
+    elementType: text
+    bounds: [880, 210, 320, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p>Enterprise Mid-Market, 3-Year Capture</p>
+
+  - elementId: cagr-bg
+    elementType: shape
+    bounds: [60, 270, 1160, 60]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+
+  - elementId: cagr-text
+    elementType: text
+    bounds: [80, 280, 1120, 40]
+    content:
+      style: "$body"
+      fontSize: 22
+      text: |
+        <p style="text-align: center;">Market growing at <b style="color: #10B981; font-size: 36px;">23% CAGR</b> (2025-2030) — driven by AI, IoT, and real-time analytics</p>
+
+  - elementId: trend-title
+    elementType: text
+    bounds: [60, 360, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>KEY MARKET TRENDS</b></p>
+
+  - elementId: trend-1-bg
+    elementType: shape
+    bounds: [60, 400, 370, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: trend-1-num
+    elementType: text
+    bounds: [75, 405, 100, 40]
+    content:
+      style: "$bigNumber"
+      fontSize: 32
+      text: |
+        <p><b>65%</b></p>
+
+  - elementId: trend-1-text
+    elementType: text
+    bounds: [75, 445, 340, 45]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>of enterprises plan to consolidate databases by 2027</p>
+
+  - elementId: trend-2-bg
+    elementType: shape
+    bounds: [445, 400, 370, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: trend-2-num
+    elementType: text
+    bounds: [460, 405, 100, 40]
+    content:
+      style: "$bigNumber"
+      fontSize: 32
+      text: |
+        <p><b>$12B</b></p>
+
+  - elementId: trend-2-text
+    elementType: text
+    bounds: [460, 445, 340, 45]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>Vector DB market alone by 2030 (Gartner)</p>
+
+  - elementId: trend-3-bg
+    elementType: shape
+    bounds: [830, 400, 390, 100]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: trend-3-num
+    elementType: text
+    bounds: [845, 405, 100, 40]
+    content:
+      style: "$bigNumber"
+      fontSize: 32
+      text: |
+        <p><b>80%</b></p>
+
+  - elementId: trend-3-text
+    elementType: text
+    bounds: [845, 445, 360, 45]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p>of new apps will use multi-model by 2028</p>
+
+  - elementId: source
+    elementType: text
+    bounds: [60, 520, 600, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p>Sources: Gartner 2025, DB-Engines 2025, MarketsAndMarkets 2025</p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">05</p>
