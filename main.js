@@ -37,8 +37,8 @@ function handleWaitlist(event) {
     form.innerHTML = `
         <div style="padding: 20px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px;">
             <div style="font-size: 24px; margin-bottom: 8px;">🎉</div>
-            <div style="font-weight: 700; color: var(--success); margin-bottom: 4px;">You're on the list!</div>
-            <div style="font-size: 14px; color: var(--text-secondary);">We'll reach out at ${email} when alpha is ready.</div>
+            <div style="font-weight: 700; color: var(--success); margin-bottom: 4px;">Beta access requested!</div>
+            <div style="font-size: 14px; color: var(--text-secondary);">We'll reach out at ${email} when beta opens.</div>
         </div>
     `;
     
