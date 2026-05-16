@@ -1,0 +1,157 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>Path to $15M ARR in 36 Months</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: rev-chart
+    elementType: chart
+    bounds: [60, 105, 700, 260]
+    chartType: bar
+    series:
+      - name: "Cloud"
+        data: [100, 800, 4500]
+        color: "#D4A843"
+      - name: "Enterprise"
+        data: [400, 2200, 10500]
+        color: "#10B981"
+    xAxis:
+      categories: ["Year 1", "Year 2", "Year 3"]
+      color: "#8B95A5"
+    yAxis:
+      color: "#8B95A5"
+    legend:
+      color: "#8B95A5"
+
+  - elementId: kpi-title
+    elementType: text
+    bounds: [790, 105, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>KEY METRICS</b></p>
+
+  - elementId: kpi-1-bg
+    elementType: shape
+    bounds: [790, 140, 430, 60]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+
+  - elementId: kpi-1
+    elementType: text
+    bounds: [810, 145, 390, 50]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #10B981; font-size: 28px;">85%</b> <span style="color: #8B95A5;">Gross Margin</span></p>
+
+  - elementId: kpi-2-bg
+    elementType: shape
+    bounds: [790, 210, 430, 60]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+
+  - elementId: kpi-2
+    elementType: text
+    bounds: [810, 215, 390, 50]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #D4A843; font-size: 28px;">Month 18</b> <span style="color: #8B95A5;">Break-even</span></p>
+
+  - elementId: kpi-3-bg
+    elementType: shape
+    bounds: [790, 280, 430, 60]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+
+  - elementId: kpi-3
+    elementType: text
+    bounds: [810, 285, 390, 50]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #10B981; font-size: 28px;">18x</b> <span style="color: #8B95A5;">LTV/CAC Enterprise</span></p>
+
+  - elementId: unit-title
+    elementType: text
+    bounds: [60, 395, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>UNIT ECONOMICS</b></p>
+
+  - elementId: unit-table
+    elementType: table
+    bounds: [60, 430, 1160, 200]
+    tableStyle: "$default"
+    content:
+      rows:
+        - cells:
+            - text: "Metric"
+            - text: "Self-Serve"
+            - text: "Enterprise"
+        - cells:
+            - text: "Customer Acquisition Cost"
+            - text: "$50"
+            - text: "$2,500"
+        - cells:
+            - text: "Lifetime Value"
+            - text: "$3,600"
+            - text: "$45,000"
+        - cells:
+            - text: "LTV / CAC Ratio"
+            - text: "<b style=\"color: #10B981;\">72x</b>"
+            - text: "<b style=\"color: #10B981;\">18x</b>"
+        - cells:
+            - text: "Avg Contract Value"
+            - text: "$299/mo"
+            - text: "$999/mo"
+        - cells:
+            - text: "Churn Rate (Monthly)"
+            - text: "3%"
+            - text: "0.5%"
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">10</p>
