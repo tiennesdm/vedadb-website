@@ -1,0 +1,251 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "11"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 50, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>Why VedaDB Wins: The Only Truly Unified Architecture</p>
+
+  # ===== LEFT COLUMN (4 items) =====
+  # Item 1: One Engine
+  - elementId: left-icon-1
+    elementType: icon
+    bounds: [60, 115, 24, 24]
+    iconName: "fas:code"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: left-title-1
+    elementType: text
+    bounds: [96, 112, 524, 30]
+    content:
+      text: |
+        <p><strong>One Engine Replaces 7 DBs</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: left-desc-1
+    elementType: text
+    bounds: [96, 145, 524, 48]
+    content:
+      text: |
+        <p>PostgreSQL, Pinecone, Neo4j, MongoDB, Redis, Elastic, InfluxDB</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # Item 2: Zero ETL
+  - elementId: left-icon-2
+    elementType: icon
+    bounds: [60, 215, 24, 24]
+    iconName: "fas:link"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: left-title-2
+    elementType: text
+    bounds: [96, 212, 524, 30]
+    content:
+      text: |
+        <p><strong>Zero ETL</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: left-desc-2
+    elementType: text
+    bounds: [96, 245, 524, 48]
+    content:
+      text: |
+        <p>Same data as SQL, Vector, Graph, Document — no replication</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # Item 3: 8 Language Drivers
+  - elementId: left-icon-3
+    elementType: icon
+    bounds: [60, 315, 24, 24]
+    iconName: "fas:globe"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: left-title-3
+    elementType: text
+    bounds: [96, 312, 524, 30]
+    content:
+      text: |
+        <p><strong>8 Language Drivers</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: left-desc-3
+    elementType: text
+    bounds: [96, 345, 524, 48]
+    content:
+      text: |
+        <p>Go, Rust, Python, Node.js, Java, C#, Ruby, PHP</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # Item 4: Self-Healing
+  - elementId: left-icon-4
+    elementType: icon
+    bounds: [60, 415, 24, 24]
+    iconName: "fas:heart-pulse"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: left-title-4
+    elementType: text
+    bounds: [96, 412, 524, 30]
+    content:
+      text: |
+        <p><strong>Self-Healing</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: left-desc-4
+    elementType: text
+    bounds: [96, 445, 524, 48]
+    content:
+      text: |
+        <p>Raft consensus, auto-failover, online backup</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # ===== RIGHT COLUMN (3 items) =====
+  # Item 5: AI-Native
+  - elementId: right-icon-1
+    elementType: icon
+    bounds: [680, 115, 24, 24]
+    iconName: "fas:robot"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: right-title-1
+    elementType: text
+    bounds: [716, 112, 504, 30]
+    content:
+      text: |
+        <p><strong>AI-Native</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: right-desc-1
+    elementType: text
+    bounds: [716, 145, 504, 48]
+    content:
+      text: |
+        <p>Built for RAG, LLM, multi-modal AI</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # Item 6: Open Core
+  - elementId: right-icon-2
+    elementType: icon
+    bounds: [680, 215, 24, 24]
+    iconName: "fab:github"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: right-title-2
+    elementType: text
+    bounds: [716, 212, 504, 30]
+    content:
+      text: |
+        <p><strong>Open Core</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: right-desc-2
+    elementType: text
+    bounds: [716, 245, 504, 48]
+    content:
+      text: |
+        <p>Free community, enterprise monetizes</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
+
+  # Item 7: Production-Ready
+  - elementId: right-icon-3
+    elementType: icon
+    bounds: [680, 315, 24, 24]
+    iconName: "fas:check-double"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: right-title-3
+    elementType: text
+    bounds: [716, 312, 504, 30]
+    content:
+      text: |
+        <p><strong>Production-Ready</strong></p>
+      fontSize: 20
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+  - elementId: right-desc-3
+    elementType: text
+    bounds: [716, 345, 504, 48]
+    content:
+      text: |
+        <p>220 tests, 100% pass rate</p>
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.3
