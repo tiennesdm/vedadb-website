@@ -859,6 +859,117 @@ section { padding: 100px 0; }
     .engines-note { flex-direction: column; }
 }
 
+/* ========== AI FEATURES ========== */
+.ai-features { background: var(--bg-primary); }
+
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.ai-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: all 0.3s;
+}
+
+.ai-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-1);
+}
+
+.ai-card-featured {
+    grid-column: span 2;
+    border-color: rgba(124, 58, 237, 0.3);
+    background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(6,182,212,0.05));
+}
+
+.ai-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.ai-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ai-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.ai-code {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 16px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.ai-code code {
+    color: #c084fc;
+    background: none;
+    font-size: 13px;
+}
+
+.ai-arrow {
+    color: var(--accent-2);
+    font-weight: 700;
+}
+
+.ai-stats-inline {
+    display: flex;
+    gap: 24px;
+}
+
+.ai-stats-inline span {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.ai-stats-inline strong {
+    color: var(--success);
+    font-size: 20px;
+}
+
+.ai-functions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ai-func {
+    padding: 4px 10px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    color: #c084fc;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ai-grid { grid-template-columns: 1fr; }
+    .ai-card-featured { grid-column: span 1; }
+    .ai-stats-inline { flex-direction: column; gap: 8px; }
+}
+
 /* ========== ANIMATIONS ========== */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }

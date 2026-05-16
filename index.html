@@ -19,6 +19,7 @@
             <ul class="nav-links">
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#engines">Engines</a></li>
+                <li><a href="#ai">AI</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="https://tiennesdm.github.io/vedadb-pitch-deck/" target="_blank">Pitch Deck</a></li>
             </ul>
@@ -48,8 +49,9 @@
                 <span class="gradient-text">Every Workload.</span>
             </h1>
             <p class="hero-subtitle">
-                VedaDB unifies <strong>7 specialized engines</strong> into a single system — 
-                SQL, Vector, Graph, Document, Cache, Search, and Time Series. 
+                VedaDB unifies <strong>7 specialized engines</strong> into a single system —
+                SQL, Vector, Graph, Document, Cache, Search, and Time Series.
+                Now with <strong>built-in AI</strong>: AutoTuner, NL2SQL, and 14 AI SQL functions.
                 2,452 files written. 8 drivers built. In final testing phase.
             </p>
             <div class="hero-cta">
@@ -195,6 +197,85 @@
         </div>
     </section>
 
+    <!-- AI-Powered Intelligence -->
+    <section class="ai-features" id="ai">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">AI-Powered</span>
+                <h2 class="section-title">Built-In Intelligence</h2>
+                <p class="section-desc">
+                    VedaDB doesn't just store data — it understands it. Native AI functions
+                    run inside the database, not as external services. No API keys. No latency. No extra cost.
+                </p>
+            </div>
+
+            <div class="ai-grid">
+                <!-- NL2SQL -->
+                <div class="ai-card ai-card-featured">
+                    <div class="ai-icon">🗣️</div>
+                    <h3>Natural Language → SQL</h3>
+                    <p>Ask questions in English. Get SQL results instantly. Powered by Anthropic Claude integration with schema-aware context building and prompt caching.</p>
+                    <div class="ai-code">
+                        <code>"Show top 5 customers by revenue"</code>
+                        <span class="ai-arrow">→</span>
+                        <code>SELECT ... LIMIT 5</code>
+                    </div>
+                </div>
+
+                <!-- AutoTuner -->
+                <div class="ai-card ai-card-featured">
+                    <div class="ai-icon">⚙️</div>
+                    <h3>AutoTuner</h3>
+                    <p>Bayesian Optimization with Gaussian Process surrogate model. Automatically tunes 200+ parameters — cache size, WAL flush, vector dimensions, concurrency.</p>
+                    <div class="ai-stats-inline">
+                        <span><strong>40%</strong> latency reduction</span>
+                        <span><strong>25%</strong> throughput gain</span>
+                    </div>
+                </div>
+
+                <!-- 14 SQL AI Functions -->
+                <div class="ai-card">
+                    <div class="ai-icon">🔮</div>
+                    <h3>14 Native AI SQL Functions</h3>
+                    <p>Run AI directly in your queries — embeddings, classification, sentiment, redaction, and more. No external AI service needed.</p>
+                    <div class="ai-functions-list">
+                        <span class="ai-func">EMBED()</span>
+                        <span class="ai-func">AI_SIMILARITY()</span>
+                        <span class="ai-func">AI_CLASSIFY()</span>
+                        <span class="ai-func">AI_SENTIMENT()</span>
+                        <span class="ai-func">AI_KEYWORDS()</span>
+                        <span class="ai-func">AI_REDACT()</span>
+                        <span class="ai-func">HYBRID_RANK()</span>
+                        <span class="ai-func">VECTOR_DISTANCE()</span>
+                        <span class="ai-func">RECOMMEND_VECTOR_INDEX()</span>
+                        <span class="ai-func">DP_NOISE_LAPLACE()</span>
+                    </div>
+                </div>
+
+                <!-- Semantic Cache -->
+                <div class="ai-card">
+                    <div class="ai-icon">💾</div>
+                    <h3>Semantic Cache</h3>
+                    <p>LRU-based embedding deduplication caches AI query results. 40-80% cost reduction on repeated embedding operations.</p>
+                </div>
+
+                <!-- Privacy -->
+                <div class="ai-card">
+                    <div class="ai-icon">🔒</div>
+                    <h3>AI-Powered Privacy</h3>
+                    <p>Differential privacy built-in. DP_NOISE_LAPLACE and DP_NOISE_GAUSSIAN functions add mathematically provable privacy guarantees to AI queries.</p>
+                </div>
+
+                <!-- Embedding Providers -->
+                <div class="ai-card">
+                    <div class="ai-icon">🔗</div>
+                    <h3>Multi-Provider Embeddings</h3>
+                    <p>Local CBOW embeddings (zero latency), OpenAI, or Cohere. Choose based on your accuracy and cost needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Architecture Preview -->
     <section class="architecture">
         <div class="container">
@@ -214,6 +295,7 @@
                         <span>Query Planner</span>
                         <span>Optimizer</span>
                         <span>Router</span>
+                        <span style="color: #c084fc; border-color: rgba(124,58,237,0.5); background: rgba(124,58,237,0.1);">AI Optimizer</span>
                     </div>
                 </div>
                 <div class="arch-arrow">▼</div>
@@ -296,6 +378,7 @@
                             <li>Web workbench (React 18 + TypeScript)</li>
                             <li>Docker, Kubernetes, Helm charts</li>
                             <li>REST API + WebSocket + gRPC interfaces</li>
+                            <li>Built-in AI: 14 SQL functions, NL2SQL, AutoTuner</li>
                         </ul>
                     </div>
                 </div>
