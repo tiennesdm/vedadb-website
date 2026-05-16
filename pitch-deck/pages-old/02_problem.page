@@ -1,0 +1,189 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>Developers Are Forced to Choose: Power or Simplicity</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: stat-box
+    elementType: shape
+    bounds: [60, 110, 1160, 130]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: stat-number
+    elementType: text
+    bounds: [100, 125, 300, 80]
+    content:
+      style: "$bigNumber"
+      text: |
+        <p><b>$50B+</b></p>
+
+  - elementId: stat-desc
+    elementType: text
+    bounds: [420, 140, 700, 50]
+    content:
+      style: "$body"
+      color: "#8B95A5"
+      text: |
+        <p>spent annually on database sprawl management across enterprises</p>
+
+  - elementId: stat-source
+    elementType: text
+    bounds: [420, 195, 400, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p>Source: Gartner, 2025</p>
+
+  - elementId: pain-1-icon
+    elementType: icon
+    bounds: [80, 290, 32, 32]
+    iconName: "alert-triangle"
+    color: "#EF4444"
+
+  - elementId: pain-1-title
+    elementType: text
+    bounds: [130, 285, 400, 40]
+    content:
+      style: "$accentText"
+      text: |
+        <p><b>Database Sprawl</b></p>
+
+  - elementId: pain-1-body
+    elementType: text
+    bounds: [130, 325, 480, 80]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p>Enterprises run 5-7 different databases (PostgreSQL, MongoDB, Redis, Elasticsearch, Neo4j, InfluxDB, Milvus) — each requiring a dedicated ops team.</p>
+
+  - elementId: pain-2-icon
+    elementType: icon
+    bounds: [80, 430, 32, 32]
+    iconName: "link-break"
+    color: "#F59E0B"
+
+  - elementId: pain-2-title
+    elementType: text
+    bounds: [130, 425, 400, 40]
+    content:
+      style: "$accentText"
+      text: |
+        <p><b>Fragile Data Sync</b></p>
+
+  - elementId: pain-2-body
+    elementType: text
+    bounds: [130, 465, 480, 80]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p>Syncing data between systems is expensive, slow, and error-prone. ETL pipelines break constantly, causing data inconsistency.</p>
+
+  - elementId: pain-3-icon
+    elementType: icon
+    bounds: [680, 290, 32, 32]
+    iconName: "clock"
+    color: "#10B981"
+
+  - elementId: pain-3-title
+    elementType: text
+    bounds: [730, 285, 400, 40]
+    content:
+      style: "$accentText"
+      text: |
+        <p><b>40% Time Wasted</b></p>
+
+  - elementId: pain-3-body
+    elementType: text
+    bounds: [730, 325, 480, 80]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p>Engineers spend nearly half their time on data plumbing — migrations, syncs, and integration — instead of building product features.</p>
+
+  - elementId: pain-4-icon
+    elementType: icon
+    bounds: [680, 430, 32, 32]
+    iconName: "shield-off"
+    color: "#EF4444"
+
+  - elementId: pain-4-title
+    elementType: text
+    bounds: [730, 425, 400, 40]
+    content:
+      style: "$accentText"
+      text: |
+        <p><b>Security Nightmare</b></p>
+
+  - elementId: pain-4-body
+    elementType: text
+    bounds: [730, 465, 480, 80]
+    content:
+      style: "$body"
+      fontSize: 18
+      text: |
+        <p>Each database has its own security model. Managing RBAC, audit, and compliance across 5+ systems is a compliance auditor's worst nightmare.</p>
+
+  - elementId: bottom-callout
+    elementType: shape
+    bounds: [60, 590, 1160, 70]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+      border:
+        style: solid
+        width: 1
+        color: "#D4A843"
+
+  - elementId: bottom-text
+    elementType: text
+    bounds: [100, 605, 1080, 40]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #D4A843;">65% of enterprises plan to consolidate databases by 2027</b> — but there's no database that truly does it all.</p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">02</p>
