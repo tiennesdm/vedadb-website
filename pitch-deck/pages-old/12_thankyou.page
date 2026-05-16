@@ -1,0 +1,122 @@
+pageType: final
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: accent-line-top
+    elementType: shape
+    bounds: [490, 180, 300, 3]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: title
+    elementType: text
+    bounds: [200, 200, 880, 80]
+    content:
+      style: "$coverTitle"
+      text: |
+        <p style="text-align: center;"><b>Join Us in Building</b></p>
+
+  - elementId: title-2
+    elementType: text
+    bounds: [200, 270, 880, 80]
+    content:
+      style: "$coverTitle"
+      fontSize: 48
+      text: |
+        <p style="text-align: center;"><b>the Future of Data</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [490, 370, 300, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: contact-bg
+    elementType: shape
+    bounds: [340, 400, 600, 180]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: email-icon
+    elementType: icon
+    bounds: [380, 420, 24, 24]
+    iconName: "mail"
+    color: "#D4A843"
+
+  - elementId: email
+    elementType: text
+    bounds: [420, 418, 450, 30]
+    content:
+      style: "$body"
+      fontSize: 20
+      text: |
+        <p>founders@vedadb.io</p>
+
+  - elementId: github-icon
+    elementType: icon
+    bounds: [380, 460, 24, 24]
+    iconName: "github"
+    color: "#D4A843"
+
+  - elementId: github
+    elementType: text
+    bounds: [420, 458, 450, 30]
+    content:
+      style: "$body"
+      fontSize: 20
+      text: |
+        <p>github.com/tiennesdm/vedadb-server-code</p>
+
+  - elementId: web-icon
+    elementType: icon
+    bounds: [380, 500, 24, 24]
+    iconName: "globe"
+    color: "#D4A843"
+
+  - elementId: web
+    elementType: text
+    bounds: [420, 498, 450, 30]
+    content:
+      style: "$body"
+      fontSize: 20
+      text: |
+        <p>vedadb.io</p>
+
+  - elementId: tagline
+    elementType: text
+    bounds: [200, 600, 880, 40]
+    content:
+      style: "$subtitle"
+      text: |
+        <p style="text-align: center;">One Database. Every Workload. Zero Compromise.</p>
+
+  - elementId: bottom-bar
+    elementType: shape
+    bounds: [0, 680, 1280, 40]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+
+  - elementId: copyright
+    elementType: text
+    bounds: [440, 685, 400, 30]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: center;">VedaDB Inc.  |  2026  |  Confidential</p>
