@@ -1,0 +1,175 @@
+pageType: content
+background:
+  type: solid
+  color: "$primary"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "08"
+      fontSize: 13
+      color: "#475569"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 55, 1160, 44]
+    content:
+      fontSize: 32
+      fontFamily: Liter
+      color: "$light"
+      wrap: false
+      text: |
+        <p>$406B Total DBMS Market by 2034</p>
+
+  # Divider line 1
+  - elementId: divider-1
+    elementType: shape
+    bounds: [430, 240, 0, 80]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#475569"
+
+  # Divider line 2
+  - elementId: divider-2
+    elementType: shape
+    bounds: [840, 240, 0, 80]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#475569"
+
+  # --- Left: TAM ---
+  - elementId: tam-number
+    elementType: text
+    bounds: [60, 180, 360, 80]
+    content:
+      style: "$bigNumber"
+      fontSize: 56
+      wrap: false
+      align: [left, middle]
+      text: |
+        <p>$406B</p>
+  - elementId: tam-label-1
+    elementType: text
+    bounds: [60, 270, 360, 30]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+      text: |
+        <p>Global DBMS Market 2034</p>
+  - elementId: tam-label-2
+    elementType: text
+    bounds: [60, 305, 360, 24]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "#475569"
+      wrap: false
+      text: |
+        <p>CAGR 13.3%</p>
+
+  # --- Center: SAM ---
+  - elementId: sam-number
+    elementType: text
+    bounds: [460, 180, 360, 80]
+    content:
+      style: "$bigNumber"
+      fontSize: 56
+      wrap: false
+      align: [left, middle]
+      text: |
+        <p>$95B</p>
+  - elementId: sam-label-1
+    elementType: text
+    bounds: [460, 270, 360, 30]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+      text: |
+        <p>Multi-Model Addressable Market</p>
+  - elementId: sam-label-2
+    elementType: text
+    bounds: [460, 305, 360, 24]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "#475569"
+      wrap: false
+      text: |
+        <p>SQL+Vec+Gra+Doc+TS</p>
+
+  # --- Right: SOM ---
+  - elementId: som-number
+    elementType: text
+    bounds: [860, 180, 360, 80]
+    content:
+      style: "$bigNumber"
+      fontSize: 56
+      wrap: false
+      align: [left, middle]
+      text: |
+        <p>$140M</p>
+  - elementId: som-label-1
+    elementType: text
+    bounds: [860, 270, 360, 30]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+      text: |
+        <p>VedaDB Target (SOM)</p>
+  - elementId: som-label-2
+    elementType: text
+    bounds: [860, 305, 360, 24]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "#475569"
+      wrap: false
+      text: |
+        <p>0.2% of SAM by Year 5</p>
+
+  # Source
+  - elementId: source
+    elementType: text
+    bounds: [60, 655, 700, 20]
+    content:
+      fontSize: 13
+      fontFamily: QuattrocentoSans
+      color: "#475569"
+      wrap: false
+      text: |
+        <p>Sources: Fortune Business Insights 2025; MarketsandMarkets 2025; Mordor Intelligence</p>
