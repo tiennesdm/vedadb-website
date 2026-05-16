@@ -1,0 +1,285 @@
+pageType: content
+background:
+  type: solid
+  color: "#0D1117"
+elements:
+  - elementId: top-accent
+    elementType: shape
+    bounds: [0, 0, 1280, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: page-title
+    elementType: text
+    bounds: [60, 30, 1100, 50]
+    content:
+      style: "$pageTitle"
+      text: |
+        <p><b>Freemium to Enterprise: Land and Expand</b></p>
+
+  - elementId: divider
+    elementType: shape
+    bounds: [60, 85, 200, 2]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: tier-os-bg
+    elementType: shape
+    bounds: [60, 110, 370, 240]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 1
+        color: "#2D3648"
+
+  - elementId: tier-os-badge
+    elementType: shape
+    bounds: [60, 110, 370, 40]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#2D3648"
+
+  - elementId: tier-os-label
+    elementType: text
+    bounds: [70, 115, 350, 30]
+    content:
+      style: "$body"
+      fontSize: 16
+      text: |
+        <p><b>OPEN SOURCE</b></p>
+
+  - elementId: tier-os-price
+    elementType: text
+    bounds: [80, 165, 200, 50]
+    content:
+      style: "$bigNumber"
+      fontSize: 42
+      color: "#FFFFFF"
+      text: |
+        <p><b>FREE</b></p>
+
+  - elementId: tier-os-features
+    elementType: text
+    bounds: [80, 220, 330, 110]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#8B95A5"
+      text: |
+        <p>Core 9 engines</p>
+        <p>Community support</p>
+        <p>GitHub + Documentation</p>
+        <p>8 language drivers</p>
+        <p>Single-node deployment</p>
+
+  - elementId: tier-cloud-bg
+    elementType: shape
+    bounds: [445, 110, 370, 240]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 2
+        color: "#D4A843"
+
+  - elementId: tier-cloud-badge
+    elementType: shape
+    bounds: [445, 110, 370, 40]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#D4A843"
+
+  - elementId: tier-cloud-label
+    elementType: text
+    bounds: [455, 115, 350, 30]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#0D1117"
+      text: |
+        <p><b>CLOUD</b></p>
+
+  - elementId: tier-cloud-price
+    elementType: text
+    bounds: [465, 165, 330, 50]
+    content:
+      style: "$bigNumber"
+      fontSize: 42
+      text: |
+        <p><b>$299</b><span style="font-size: 18px; color: #8B95A5;">/mo/node</span></p>
+
+  - elementId: tier-cloud-features
+    elementType: text
+    bounds: [465, 220, 330, 110]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#8B95A5"
+      text: |
+        <p>Managed hosting</p>
+        <p>Auto-scaling</p>
+        <p>Automated backups</p>
+        <p>Monitoring dashboard</p>
+        <p>Email support</p>
+
+  - elementId: tier-ent-bg
+    elementType: shape
+    bounds: [830, 110, 390, 240]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1E2538"
+      border:
+        style: solid
+        width: 2
+        color: "#10B981"
+
+  - elementId: tier-ent-badge
+    elementType: shape
+    bounds: [830, 110, 390, 40]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#10B981"
+
+  - elementId: tier-ent-label
+    elementType: text
+    bounds: [840, 115, 370, 30]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#0D1117"
+      text: |
+        <p><b>ENTERPRISE</b></p>
+
+  - elementId: tier-ent-price
+    elementType: text
+    bounds: [850, 165, 350, 50]
+    content:
+      style: "$bigNumber"
+      fontSize: 42
+      color: "#10B981"
+      text: |
+        <p><b>$999</b><span style="font-size: 18px; color: #8B95A5;">/mo/node</span></p>
+
+  - elementId: tier-ent-features
+    elementType: text
+    bounds: [850, 220, 350, 110]
+    content:
+      style: "$body"
+      fontSize: 16
+      color: "#8B95A5"
+      text: |
+        <p>High availability (HA)</p>
+        <p>Advanced security (RBAC, RLS)</p>
+        <p>Priority support + SLAs</p>
+        <p>Custom integrations</p>
+        <p>Dedicated success manager</p>
+
+  - elementId: margin-title
+    elementType: text
+    bounds: [60, 380, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>UNIT ECONOMICS</b></p>
+
+  - elementId: margin-bg
+    elementType: shape
+    bounds: [60, 415, 1160, 80]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+
+  - elementId: margin-gm
+    elementType: text
+    bounds: [80, 420, 260, 70]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #10B981; font-size: 36px;">85%</b></p>
+        <p style="color: #8B95A5; font-size: 14px;">Gross Margin</p>
+
+  - elementId: margin-cac
+    elementType: text
+    bounds: [360, 420, 260, 70]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #D4A843; font-size: 36px;">$2,500</b></p>
+        <p style="color: #8B95A5; font-size: 14px;">Enterprise CAC</p>
+
+  - elementId: margin-ltv
+    elementType: text
+    bounds: [640, 420, 260, 70]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #10B981; font-size: 36px;">$45K</b></p>
+        <p style="color: #8B95A5; font-size: 14px;">Enterprise LTV</p>
+
+  - elementId: margin-ratio
+    elementType: text
+    bounds: [920, 420, 280, 70]
+    content:
+      style: "$body"
+      text: |
+        <p><b style="color: #10B981; font-size: 36px;">18x</b></p>
+        <p style="color: #8B95A5; font-size: 14px;">LTV / CAC Ratio</p>
+
+  - elementId: proj-title
+    elementType: text
+    bounds: [60, 520, 400, 30]
+    content:
+      style: "$annotation"
+      color: "#D4A843"
+      text: |
+        <p><b>REVENUE PROJECTIONS</b></p>
+
+  - elementId: proj-bg
+    elementType: shape
+    bounds: [60, 555, 1160, 50]
+    shape:
+      shapeName: rectangle
+      fill:
+        type: solid
+        color: "#1A1F36"
+
+  - elementId: proj-text
+    elementType: text
+    bounds: [80, 560, 1120, 40]
+    content:
+      style: "$body"
+      fontSize: 22
+      text: |
+        <p style="text-align: center;">Year 1: <b style="color: #D4A843;">$500K</b>  →  Year 2: <b style="color: #D4A843;">$3M</b>  →  Year 3: <b style="color: #10B981;">$15M ARR</b></p>
+
+  - elementId: page-num
+    elementType: text
+    bounds: [1200, 680, 60, 25]
+    content:
+      style: "$annotation"
+      text: |
+        <p style="text-align: right;">06</p>
