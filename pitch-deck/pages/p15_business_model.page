@@ -1,0 +1,261 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "15"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 50, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>Open Core + Enterprise Cloud = $75M by Year 5</p>
+
+  # ===== 3 Revenue Cards =====
+  # Card 1: Open Core
+  - elementId: card-bg-1
+    elementType: shape
+    bounds: [60, 115, 350, 260]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-icon-1
+    elementType: icon
+    bounds: [80, 135, 32, 32]
+    iconName: "fas:users"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-title-1
+    elementType: text
+    bounds: [80, 180, 310, 30]
+    content:
+      text: Open Core
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+  - elementId: card-price-1
+    elementType: text
+    bounds: [80, 215, 310, 36]
+    content:
+      text: |
+        <p><span style="font-size:24px; color:$accent;"><strong>FREE</strong></span></p>
+      fontSize: 24
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+  - elementId: card-desc-1
+    elementType: text
+    bounds: [80, 260, 310, 50]
+    content:
+      text: |
+        <p>Apache 2.0, self-hosted, community-driven</p>
+      fontSize: 14
+      fontFamily: QuattrocentoSans
+      color: "$background"
+      lineHeight: 1.4
+
+  # Card 2: Enterprise
+  - elementId: card-bg-2
+    elementType: shape
+    bounds: [430, 115, 350, 260]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-icon-2
+    elementType: icon
+    bounds: [450, 135, 32, 32]
+    iconName: "fas:building"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-title-2
+    elementType: text
+    bounds: [450, 180, 310, 30]
+    content:
+      text: Enterprise
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+  - elementId: card-price-2
+    elementType: text
+    bounds: [450, 215, 310, 36]
+    content:
+      text: |
+        <p><span style="font-size:24px; color:$accent;"><strong>$25K-$150K/yr</strong></span></p>
+      fontSize: 24
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+  - elementId: card-desc-2
+    elementType: text
+    bounds: [450, 260, 310, 50]
+    content:
+      text: |
+        <p>SSO, RBAC, clustering, SLA</p>
+      fontSize: 14
+      fontFamily: QuattrocentoSans
+      color: "$background"
+      lineHeight: 1.4
+
+  # Card 3: VedaDB Cloud
+  - elementId: card-bg-3
+    elementType: shape
+    bounds: [800, 115, 420, 260]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$muted"
+  - elementId: card-icon-3
+    elementType: icon
+    bounds: [820, 135, 32, 32]
+    iconName: "fas:cloud"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card-title-3
+    elementType: text
+    bounds: [820, 180, 380, 30]
+    content:
+      text: VedaDB Cloud
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$light"
+      wrap: false
+  - elementId: card-price-3
+    elementType: text
+    bounds: [820, 215, 380, 36]
+    content:
+      text: |
+        <p><span style="font-size:24px; color:$accent;"><strong>$99+/mo</strong></span></p>
+      fontSize: 24
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+  - elementId: card-desc-3
+    elementType: text
+    bounds: [820, 260, 380, 50]
+    content:
+      text: |
+        <p>Managed DBaaS, auto-scaling</p>
+      fontSize: 14
+      fontFamily: QuattrocentoSans
+      color: "$background"
+      lineHeight: 1.4
+
+  # ===== Bottom Left: GTM =====
+  - elementId: gtm-header
+    elementType: text
+    bounds: [60, 400, 500, 28]
+    content:
+      text: |
+        <p><strong>GO-TO-MARKET</strong></p>
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$primary"
+      wrap: false
+
+  - elementId: gtm-bullets
+    elementType: text
+    bounds: [60, 435, 500, 210]
+    content:
+      fontSize: 16
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.5
+      text: |
+        <ul>
+        <li>Developer-first: GitHub, Hacker News, conferences</li>
+        <li>Engineering leaders → Enterprise procurement</li>
+        <li>CAC: $2,500 | LTV: $48,000 | LTV/CAC: 19:1</li>
+        </ul>
+
+  # ===== Bottom Right: Revenue Bar Chart =====
+  - elementId: revenue-chart
+    elementType: chart
+    bounds: [600, 395, 620, 250]
+    type: bar
+    title:
+      text: Revenue Projections
+      color: "$primary"
+      fontSize: 16
+    data:
+      - {year: Y1, revenue: 0.5}
+      - {year: Y2, revenue: 2.5}
+      - {year: Y3, revenue: 8}
+      - {year: Y4, revenue: 25}
+      - {year: Y5, revenue: 75}
+    x: year
+    y: [revenue]
+    names: ["Revenue ($M)"]
+    colors: ["$muted"]
+    options:
+      fontFamily: QuattrocentoSans
+    legend: false
+    dataLabels:
+      show: true
+      content: value
+      color: "$text"
+      fontSize: 12
+    yAxis:
+      gridLine:
+        style: solid
+        color: "#E0E0E0"
+        width: 1
+      label:
+        color: "$secondary"
+        fontSize: 11
+    xAxis:
+      label:
+        color: "$text"
+        fontSize: 12
+    seriesStyle:
+      revenue:
+        fill:
+          type: solid
+          color: "$muted"
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "$border"
