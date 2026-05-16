@@ -1,0 +1,41 @@
+pageType: chapter
+background:
+  type: solid
+  color: "$primary"
+elements:
+  - elementId: chapter-number
+    elementType: text
+    bounds: [60, 120, 200, 156]
+    content:
+      style: "$chapterNumber"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p>04</p>
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 370, 80, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: chapter-title
+    elementType: text
+    bounds: [60, 390, 800, 52]
+    content:
+      style: "$chapterTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>THE COMPETITION</p>
+  - elementId: chapter-subtitle
+    elementType: text
+    bounds: [60, 460, 950, 30]
+    content:
+      fontSize: 20
+      color: "$light"
+      fontFamily: "QuattrocentoSans"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>12 competitors analyzed across all 7 segments — not one is truly unified</p>
