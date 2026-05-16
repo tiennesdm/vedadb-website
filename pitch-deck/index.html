@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaDB Pitch Deck — Bootstrapped, Seeking Pre-Seed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e1a;
+            --bg-card: #111827;
+            --border: #1f2937;
+            --text: #f0f2f5;
+            --text-secondary: #94a3b8;
+            --accent-1: #7c3aed;
+            --accent-2: #06b6d4;
+            --gradient: linear-gradient(135deg, #7c3aed, #06b6d4);
+            --success: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 20px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 36px; height: 36px; background: var(--gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .header-email { font-size: 14px; color: var(--text-secondary); }
+        .header-email a { color: var(--accent-2); text-decoration: none; }
+
+        /* Slides */
+        .slides-wrapper { padding-top: 100px; padding-bottom: 60px; }
+        .slide { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; margin-bottom: 24px; }
+        .slide-number { font-size: 12px; font-weight: 600; color: var(--accent-1); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .slide h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
+        .slide h3 { font-size: 20px; font-weight: 700; margin: 20px 0 12px; }
+        .slide p { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; }
+        .slide ul { margin-left: 20px; color: var(--text-secondary); }
+        .slide li { margin-bottom: 8px; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { text-align: left; padding: 12px 16px; background: rgba(124,58,237,0.1); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-1); border-bottom: 1px solid var(--border); }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+
+        /* Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+        .stat-card { background: rgba(124,58,237,0.05); border: 1px solid rgba(124,58,237,0.15); border-radius: 12px; padding: 24px; text-align: center; }
+        .stat-number { font-size: 32px; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 13px; color: var(--text-secondary); margin-top: 8px; }
+
+        /* Gradient text */
+        .gradient { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* Footer */
+        .footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+        .footer p { color: var(--text-secondary); font-size: 14px; }
+        .footer a { color: var(--accent-2); text-decoration: none; }
+
+        /* Badges */
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+        .badge-purple { background: rgba(124,58,237,0.1); color: #c084fc; }
+        .badge-green { background: rgba(16,185,129,0.1); color: #34d399; }
+        .badge-blue { background: rgba(6,182,212,0.1); color: #22d3ee; }
+        .badge-orange { background: rgba(245,158,11,0.1); color: #fbbf24; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide { padding: 24px; }
+            .slide h2 { font-size: 24px; }
+            .header-email { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo"><span class="logo-icon">◈</span> VedaDB Pitch Deck</div>
+            <div class="header-email">Founder: <a href="mailto:contact@vedadb.com">contact@vedadb.com</a></div>
+        </div>
+    </header>
+
+    <div class="slides-wrapper container">
+        <!-- SLIDE 1: Cover -->
+        <div class="slide">
+            <div class="slide-number">Slide 1 / 14</div>
+            <h2 style="font-size: 48px;">VedaDB</h2>
+            <p style="font-size: 24px;"><span class="gradient">The World's First Zero-Compromise Multi-Model Database</span></p>
+            <div style="margin-top: 40px;">
+                <span class="badge badge-purple">Bootstrapped</span>
+                <span class="badge badge-blue">Pre-Seed Stage</span>
+                <span class="badge badge-green">7 Engines Built</span>
+                <span class="badge badge-blue">2,452 Files</span>
+                <span class="badge badge-orange">Beta Ready</span>
+                <span class="badge badge-purple">14 AI Functions</span>
+            </div>
+            <p style="margin-top: 32px; font-size: 14px;">
+                <strong>Founder:</strong> Shubahm Mehta | 
+                <strong>Email:</strong> <a href="mailto:contact@vedadb.com" style="color: var(--accent-2);">contact@vedadb.com</a> |
+                <strong>Website:</strong> <a href="https://tiennesdm.github.io/vedadb-website" style="color: var(--accent-2);">tiennesdm.github.io/vedadb-website</a>
+            </p>
+        </div>
+
+        <!-- SLIDE 2: Problem -->
+        <div class="slide">
+            <div class="slide-number">Slide 2 / 14</div>
+            <h2>The Problem</h2>
+            <p style="font-size: 20px; color: var(--text);">Modern applications need <strong>multiple data models</strong> — but each requires a separate database.</p>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">$50B+</div><div class="stat-label">Wasted on DB Sprawl</div></div>
+                <div class="stat-card"><div class="stat-number">7x</div><div class="stat-label">Tools to Manage</div></div>
+                <div class="stat-card"><div class="stat-number">60%</div><div class="stat-label">Higher TCO</div></div>
+                <div class="stat-card"><div class="stat-number">3-5yr</div><div class="stat-label">Integration Time</div></div>
+            </div>
+            <ul>
+                <li>Different query languages, APIs, and data models</li>
+                <li>Complex data pipelines for cross-model queries</li>
+                <li>Multiple backup, monitoring, and scaling systems</li>
+                <li>Operational complexity increases with each new database</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 3: Solution -->
+        <div class="slide">
+            <div class="slide-number">Slide 3 / 14</div>
+            <h2>The Solution: <span class="gradient">7 Engines, 1 System</span></h2>
+            <p>VedaDB unifies 7 specialized storage engines under a single query layer. One connection string. One admin panel. One backup strategy.</p>
+            <table>
+                <tr><th>Engine</th><th>Purpose</th><th>Status</th></tr>
+                <tr><td><strong>SQL</strong></td><td>Relational data, ACID transactions, joins</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Vector</strong></td><td>Similarity search, AI embeddings, RAG</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Graph</strong></td><td>Relationships, fraud detection, recommendations</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Document</strong></td><td>JSON-native, flexible schema, MongoDB API</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Cache</strong></td><td>Sub-millisecond reads, LRU, TTL</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Search</strong></td><td>Full-text, fuzzy matching, faceted search</td><td><span class="badge badge-green">Built</span></td></tr>
+                <tr><td><strong>Time Series</strong></td><td>IoT, monitoring, rollups</td><td><span class="badge badge-green">Built</span></td></tr>
+            </table>
+        </div>
+
+        <!-- SLIDE 4: Architecture -->
+        <div class="slide">
+            <div class="slide-number">Slide 4 / 14</div>
+            <h2>Product Architecture</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">2,452</div><div class="stat-label">Total Files</div></div>
+                <div class="stat-card"><div class="stat-number">1,593</div><div class="stat-label">Go Files</div></div>
+                <div class="stat-card"><div class="stat-number">53</div><div class="stat-label">Rust Files (SIMD)</div></div>
+                <div class="stat-card"><div class="stat-number">73</div><div class="stat-label">Workbench Files</div></div>
+            </div>
+            <h3>Key Components</h3>
+            <ul>
+                <li><strong>Query Processor:</strong> SQL parser, planner, optimizer, router</li>
+                <li><strong>7 Storage Engines:</strong> Each optimized for its data model</li>
+                <li><strong>Rust SIMD Engine:</strong> AVX2/NEON acceleration for 5-10x vector operations</li>
+                <li><strong>AI System:</strong> 14 SQL AI functions, NL2SQL, AutoTuner (Bayesian Optimization), Semantic Cache</li>
+                <li><strong>Replication:</strong> WAL-based, Raft consensus, multi-region</li>
+                <li><strong>Interfaces:</strong> REST API, WebSocket, gRPC</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 5: AI Capabilities (NEW) -->
+        <div class="slide">
+            <div class="slide-number">Slide 5 / 14</div>
+            <h2>AI-Powered Intelligence <span class="gradient">Built-In</span></h2>
+            <p>AI doesn't bolt-on — it's native. 14 SQL functions, natural language queries, and self-tuning optimization run inside the database.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">14</div><div class="stat-label">Native AI SQL Functions</div></div>
+                <div class="stat-card"><div class="stat-number">40%</div><div class="stat-label">Latency Reduction</div></div>
+                <div class="stat-card"><div class="stat-number">40-80%</div><div class="stat-label">Embedding Cost Savings</div></div>
+                <div class="stat-card"><div class="stat-number">0</div><div class="stat-label">External AI Services Needed</div></div>
+            </div>
+            
+            <h3>Key AI Capabilities</h3>
+            <table>
+                <tr><th>Capability</th><th>Description</th><th>Technology</th></tr>
+                <tr><td><strong>NL2SQL</strong></td><td>Natural Language → SQL queries</td><td>Anthropic Claude API</td></tr>
+                <tr><td><strong>AutoTuner</strong></td><td>Self-tuning 200+ parameters</td><td>Bayesian Optimization, Gaussian Process</td></tr>
+                <tr><td><strong>Semantic Cache</strong></td><td>LRU embedding deduplication</td><td>LRU cache with vector similarity</td></tr>
+                <tr><td><strong>AI SQL Functions</strong></td><td>EMBED, AI_CLASSIFY, AI_SENTIMENT, etc.</td><td>Native SQL execution</td></tr>
+                <tr><td><strong>Privacy</strong></td><td>Differential privacy for AI</td><td>Laplace & Gaussian noise</td></tr>
+            </table>
+        </div>
+
+        <!-- SLIDE 6: AI SQL Functions (NEW) -->
+        <div class="slide">
+            <div class="slide-number">Slide 6 / 14</div>
+            <h2>14 Native <span class="gradient">AI SQL Functions</span></h2>
+            <p>Run AI directly in SQL queries. No external APIs. No network latency. No per-token costs.</p>
+            
+            <div style="margin: 20px 0;">
+                <span class="badge badge-purple">EMBED()</span>
+                <span class="badge badge-purple">AI_SIMILARITY()</span>
+                <span class="badge badge-purple">AI_CLASSIFY()</span>
+                <span class="badge badge-purple">AI_SENTIMENT()</span>
+                <span class="badge badge-purple">AI_KEYWORDS()</span>
+                <span class="badge badge-purple">AI_REDACT()</span>
+                <span class="badge badge-blue">HYBRID_RANK()</span>
+                <span class="badge badge-blue">VECTOR_DISTANCE()</span>
+                <span class="badge badge-blue">RECOMMEND_VECTOR_INDEX()</span>
+                <span class="badge badge-blue">DOT()</span>
+                <span class="badge badge-green">VECTOR_NORM()</span>
+                <span class="badge badge-green">L2_NORMALIZE()</span>
+                <span class="badge badge-orange">DP_NOISE_LAPLACE()</span>
+                <span class="badge badge-orange">DP_NOISE_GAUSSIAN()</span>
+            </div>
+            
+            <h3>Use Cases</h3>
+            <ul>
+                <li><strong>Semantic Search:</strong> <code style="color: #c084fc;">SELECT * FROM docs ORDER BY AI_SIMILARITY(content, EMBED('query')) DESC</code></li>
+                <li><strong>Auto-Classification:</strong> <code style="color: #c084fc;">SELECT AI_CLASSIFY(support_ticket, 'urgency') FROM tickets</code></li>
+                <li><strong>Privacy-Preserving Analytics:</strong> <code style="color: #c084fc;">SELECT AVG(salary + DP_NOISE_LAPLACE(10000)) FROM employees</code></li>
+                <li><strong>Hybrid Search:</strong> <code style="color: #c084fc;">SELECT * FROM products WHERE HYBRID_RANK(text_col, vector_col, 'query') > 0.8</code></li>
+            </ul>
+            
+            <p style="margin-top: 16px;"><span class="badge badge-green">Local CBOW embeddings</span> <span class="badge badge-blue">OpenAI compatible</span> <span class="badge badge-purple">Cohere compatible</span></p>
+        </div>
+
+        <!-- SLIDE 7: Market (was Slide 5) -->
+        <div class="slide">
+            <div class="slide-number">Slide 7 / 14</div>
+            <h2>Market Opportunity</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">$406B</div><div class="stat-label">TAM (DBMS by 2034)</div></div>
+                <div class="stat-card"><div class="stat-number">$32B</div><div class="stat-label">SAM (Multi-Model)</div></div>
+                <div class="stat-card"><div class="stat-number">$2.5B</div><div class="stat-label">SOM (Addressable)</div></div>
+                <div class="stat-card"><div class="stat-number">23%</div><div class="stat-label">CAGR</div></div>
+            </div>
+            <p><strong>Market validation:</strong> IBM acquired Confluent for $11B, Databricks acquired Neon for $1B, MongoDB acquired Voyage AI for $220M. Database consolidation is the biggest trend in enterprise software.</p>
+        </div>
+
+        <!-- SLIDE 6: Business Model -->
+        <div class="slide">
+            <div class="slide-number">Slide 8 / 14</div>
+            <h2>Business Model</h2>
+            <table>
+                <tr><th>Tier</th><th>Price</th><th>Target</th><th>Features</th></tr>
+                <tr><td><strong>Open Source</strong></td><td>Free</td><td>Developers</td><td>All 7 engines + 14 AI functions, single-node, community support</td></tr>
+                <tr><td><strong>Cloud</strong></td><td>$299/mo</td><td>Startups</td><td>+ AI AutoTuner, NL2SQL, managed hosting, backups, monitoring</td></tr>
+                <tr><td><strong>Enterprise</strong></td><td>$999/mo</td><td>Fortune 500</td><td>+ Advanced AI analytics, custom models, clustering, RBAC, SSO, audit, SLA</td></tr>
+            </table>
+            <p style="margin-top: 16px;"><span class="badge badge-green">85% Gross Margins</span> <span class="badge badge-purple">18x LTV/CAC</span> <span class="badge badge-blue">Land & Expand</span></p>
+        </div>
+
+        <!-- SLIDE 7: Competitive Advantage -->
+        <div class="slide">
+            <div class="slide-number">Slide 9 / 14</div>
+            <h2>Competitive Advantage</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">3-6x</div><div class="stat-label">Faster Queries</div></div>
+                <div class="stat-card"><div class="stat-number">60%</div><div class="stat-label">TCO Savings</div></div>
+                <div class="stat-card"><div class="stat-number">7→1</div><div class="stat-label">DBs Consolidated</div></div>
+                <div class="stat-card"><div class="stat-number">0</div><div class="stat-label">Data Movement</div></div>
+            </div>
+            <h3>vs. PostgreSQL + Extensions</h3>
+            <p>PG has pgvector and timescaledb — but they're separate extensions with different APIs. VedaDB has native integration.</p>
+            <h3>vs. MongoDB Atlas</h3>
+            <p>MongoDB is document-only. VedaDB gives you document + 6 more engines with true cross-model queries.</p>
+            <h3>vs. Running 7 Separate DBs</h3>
+            <p>No ETL pipelines. No data movement. One query language. One ops team.</p>
+        </div>
+
+        <!-- SLIDE 8: Traction -->
+        <div class="slide">
+            <div class="slide-number">Slide 10 / 14</div>
+            <h2>What We've Built</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">2,452</div><div class="stat-label">Files Written</div></div>
+                <div class="stat-card"><div class="stat-number">1,593</div><div class="stat-label">Go Source Files</div></div>
+                <div class="stat-card"><div class="stat-number">8</div><div class="stat-label">Language Drivers</div></div>
+                <div class="stat-card"><div class="stat-number">73</div><div class="stat-label">UI Components</div></div>
+            </div>
+            <h3>Completed</h3>
+            <ul>
+                <li>✅ All 7 storage engines (SQL, Vector, Graph, Document, Cache, Search, Time Series)</li>
+                <li>✅ Query processor with SQL parser, planner, and optimizer</li>
+                <li>✅ 8 language drivers (Python, Node.js, Go, Java, Rust, .NET, Ruby, PHP)</li>
+                <li>✅ Web workbench (React 18 + TypeScript + Tailwind)</li>
+                <li>✅ Rust SIMD acceleration engine (AVX2/NEON)</li>
+                <li>✅ Docker, Kubernetes, and Helm deployment</li>
+                <li>✅ Complete documentation and API reference</li>
+                <li>⏳ Final integration testing (current focus)</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 9: Go-to-Market -->
+        <div class="slide">
+            <div class="slide-number">Slide 11 / 14</div>
+            <h2>Go-to-Market Strategy</h2>
+            <h3>Phase 1: Developer Adoption (Now)</h3>
+            <ul>
+                <li>Open-source core with permissive license</li>
+                <li>Developer docs, tutorials, and quickstarts</li>
+                <li>Community Discord and GitHub presence</li>
+            </ul>
+            <h3>Phase 2: Cloud Launch (Month 6)</h3>
+            <ul>
+                <li>Managed cloud service on AWS, GCP, Azure</li>
+                <li>$299/mo tier for startups and SMBs</li>
+            </ul>
+            <h3>Phase 3: Enterprise (Month 12)</h3>
+            <ul>
+                <li>Direct sales to Fortune 500</li>
+                <li>$999/mo enterprise tier with SLA</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 10: Financials -->
+        <div class="slide">
+            <div class="slide-number">Slide 12 / 14</div>
+            <h2>Financial Projections</h2>
+            <table>
+                <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr>
+                <tr><td><strong>ARR</strong></td><td>$500K</td><td>$3M</td><td>$15M</td></tr>
+                <tr><td><strong>Customers</strong></td><td>50</td><td>300</td><td>1,500</td></tr>
+                <tr><td><strong>Gross Margin</strong></td><td>75%</td><td>82%</td><td>85%</td></tr>
+                <tr><td><strong>Team Size</strong></td><td>8</td><td>18</td><td>35</td></tr>
+            </table>
+            <p style="margin-top: 16px;"><strong>Break-even:</strong> Month 18 | <strong>Unit Economics:</strong> 18x LTV/CAC</p>
+        </div>
+
+        <!-- SLIDE 11: The Ask -->
+        <div class="slide">
+            <div class="slide-number">Slide 13 / 14</div>
+            <h2>The Ask: <span class="gradient">Pre-Seed Round</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number">50%</div><div class="stat-label">Engineering</div></div>
+                <div class="stat-card"><div class="stat-number">25%</div><div class="stat-label">Sales & Marketing</div></div>
+                <div class="stat-card"><div class="stat-number">15%</div><div class="stat-label">Cloud Infrastructure</div></div>
+                <div class="stat-card"><div class="stat-number">10%</div><div class="stat-label">Operations</div></div>
+            </div>
+            <h3>Milestones with Pre-Seed</h3>
+            <ul>
+                <li><strong>Month 3:</strong> Complete testing, beta release</li>
+                <li><strong>Month 6:</strong> Public beta, 100+ beta users</li>
+                <li><strong>Month 9:</strong> Cloud service launch</li>
+                <li><strong>Month 12:</strong> First paying customers</li>
+                <li><strong>Month 18:</strong> $500K ARR, break-even</li>
+            </ul>
+            <p style="margin-top: 16px;"><strong>Runway:</strong> 24 months to Series A metrics</p>
+        </div>
+
+        <!-- SLIDE 12: Thank You -->
+        <div class="slide">
+            <div class="slide-number">Slide 14 / 14</div>
+            <h2 style="font-size: 48px; text-align: center;">Thank You</h2>
+            <p style="font-size: 20px; text-align: center; margin: 24px 0;"><span class="gradient">One Database. Every Workload. Zero Compromises.</span></p>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 18px; margin-bottom: 16px;">
+                    <strong>Shubahm Mehta</strong><br>
+                    <span style="color: var(--text-secondary);">Founder, VedaDB</span>
+                </p>
+                <p style="font-size: 16px; margin-bottom: 8px;">
+                    📧 <a href="mailto:contact@vedadb.com" style="color: var(--accent-2);">contact@vedadb.com</a>
+                </p>
+                <p style="font-size: 14px; margin-bottom: 8px;">
+                    🌐 <a href="https://tiennesdm.github.io/vedadb-website" style="color: var(--accent-2);">tiennesdm.github.io/vedadb-website</a>
+                </p>
+                <p style="font-size: 14px;">
+                    📊 <a href="https://github.com/tiennesdm/vedadb-pitch-deck" style="color: var(--accent-2);">github.com/tiennesdm/vedadb-pitch-deck</a>
+                </p>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-secondary);">
+                VedaDB Inc. | 2026 | Confidential
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>VedaDB Pitch Deck | Founder: Shubahm Mehta | <a href="mailto:contact@vedadb.com">contact@vedadb.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
