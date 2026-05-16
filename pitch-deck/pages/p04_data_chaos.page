@@ -1,0 +1,362 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  # Common: VEDADB logotype
+  - elementId: logotype
+    elementType: text
+    bounds: [60, 20, 100, 20]
+    content:
+      text: VEDADB
+      fontSize: 12
+      fontFamily: Liter
+      color: "$accent"
+      wrap: false
+
+  # Common: Page number
+  - elementId: page-num
+    elementType: text
+    bounds: [1196, 685, 40, 20]
+    content:
+      text: "04"
+      fontSize: 13
+      color: "$secondary"
+      wrap: false
+      align: [right, middle]
+
+  # Common: Gold accent line
+  - elementId: accent-line
+    elementType: shape
+    bounds: [60, 690, 40, 2]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+
+  # Title
+  - elementId: title
+    elementType: text
+    bounds: [60, 55, 1160, 44]
+    content:
+      style: "$title"
+      fontSize: 28
+      wrap: false
+      text: |
+        <p>Engineering Teams Run 7+ Databases Per App — It's Unsustainable</p>
+
+  # Left bullets
+  - elementId: bullets
+    elementType: text
+    bounds: [60, 120, 640, 310]
+    content:
+      fontSize: 18
+      fontFamily: QuattrocentoSans
+      color: "$text"
+      lineHeight: 1.5
+      text: |
+        <ul>
+        <li><strong>68%</strong> of enterprises run 10+ separate databases (up from 23% in 2020)</li>
+        <li>Each DB needs: separate query language, driver, monitoring, backup system</li>
+        <li>Engineers spend <strong>40%+</strong> time managing infrastructure vs. building products</li>
+        <li>Same data copied across PostgreSQL, Neo4j, MongoDB, Redis, Elasticsearch, InfluxDB, Pinecone</li>
+        <li>Costs multiply: licensing + hosting + personnel for each database</li>
+        </ul>
+
+  # Right side: DB labels and chaos diagram
+  # DB boxes stacked vertically
+  - elementId: db-box-1
+    elementType: shape
+    bounds: [780, 130, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-1
+    elementType: text
+    bounds: [790, 130, 100, 32]
+    content:
+      text: PostgreSQL
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-1
+    elementType: text
+    bounds: [922, 130, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-2
+    elementType: shape
+    bounds: [780, 170, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-2
+    elementType: text
+    bounds: [790, 170, 100, 32]
+    content:
+      text: Neo4j
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-2
+    elementType: text
+    bounds: [922, 170, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-3
+    elementType: shape
+    bounds: [780, 210, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-3
+    elementType: text
+    bounds: [790, 210, 100, 32]
+    content:
+      text: MongoDB
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-3
+    elementType: text
+    bounds: [922, 210, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-4
+    elementType: shape
+    bounds: [780, 250, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-4
+    elementType: text
+    bounds: [790, 250, 100, 32]
+    content:
+      text: Redis
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-4
+    elementType: text
+    bounds: [922, 250, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-5
+    elementType: shape
+    bounds: [780, 290, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-5
+    elementType: text
+    bounds: [790, 290, 100, 32]
+    content:
+      text: Elastic
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-5
+    elementType: text
+    bounds: [922, 290, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-6
+    elementType: shape
+    bounds: [780, 330, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-6
+    elementType: text
+    bounds: [790, 330, 100, 32]
+    content:
+      text: InfluxDB
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-6
+    elementType: text
+    bounds: [922, 330, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  - elementId: db-box-7
+    elementType: shape
+    bounds: [780, 370, 140, 32]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+  - elementId: db-label-7
+    elementType: text
+    bounds: [790, 370, 100, 32]
+    content:
+      text: Pinecone
+      fontSize: 14
+      color: "$text"
+      wrap: false
+      align: [left, middle]
+  - elementId: db-x-7
+    elementType: text
+    bounds: [922, 370, 40, 32]
+    content:
+      text: |
+        <p><span style="font-size:18px; color:#cc0000;">X</span></p>
+      fontSize: 18
+      color: "#cc0000"
+      wrap: false
+      align: [center, middle]
+
+  # Complexity arrows between DBs (red zigzag lines)
+  - elementId: chaos-arrow-1
+    elementType: shape
+    bounds: [850, 162, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+  - elementId: chaos-arrow-2
+    elementType: shape
+    bounds: [850, 202, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+  - elementId: chaos-arrow-3
+    elementType: shape
+    bounds: [850, 242, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+  - elementId: chaos-arrow-4
+    elementType: shape
+    bounds: [850, 282, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+  - elementId: chaos-arrow-5
+    elementType: shape
+    bounds: [850, 322, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+  - elementId: chaos-arrow-6
+    elementType: shape
+    bounds: [850, 362, 0, 8]
+    shapeName: straightConnector1
+    border:
+      style: solid
+      width: 1
+      color: "#cc0000"
+    arrow: [null, "arrow"]
+
+  # "Data Chaos" label
+  - elementId: chaos-label
+    elementType: text
+    bounds: [980, 240, 200, 50]
+    content:
+      text: |
+        <p style="text-align:center"><span style="font-size:22px; color:#cc0000;"><strong>DATA CHAOS</strong></span></p>
+      fontSize: 22
+      color: "#cc0000"
+      fontFamily: Liter
+      wrap: false
+      align: [center, middle]
+
+  # Source line
+  - elementId: source
+    elementType: text
+    bounds: [60, 655, 300, 20]
+    content:
+      style: "$caption"
+      text: |
+        <p>Source: Industry Research 2024</p>
+      wrap: false
