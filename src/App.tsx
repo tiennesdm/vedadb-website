@@ -1,10 +1,5 @@
-import { Routes, Route } from 'react-router'
-import Home from './pages/Home'
-
+// App.tsx is now handled by main.tsx with HashRouter
+// This file is kept for compatibility but is no longer used directly.
 export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-  )
+  return null;
 }
