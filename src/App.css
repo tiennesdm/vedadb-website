@@ -1,0 +1,48 @@
+/*
+ * App-level styles for VedaDB
+ * Global layout utilities and app-wide CSS
+ */
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* Ensure smooth scrolling from Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* GPU acceleration hints for animated elements */
+.gpu-layer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Prevent FOUC for GSAP-animated elements */
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gsap-reveal.revealed {
+  opacity: 1;
+  visibility: visible;
+}
