@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react';
+import type { ComponentType } from 'react';
+import type { LucideProps } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -35,9 +37,11 @@ gsap.registerPlugin(ScrollTrigger);
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
+type IconType = ComponentType<LucideProps>;
+
 interface FeatureItem {
   title: string;
-  icon: React.ElementType;
+  icon: IconType;
   description: string;
   code: string;
 }
@@ -266,7 +270,7 @@ function FeatureCard({
   accentColor: string;
   index: number;
 }) {
-  const Icon = feature.icon;
+  const IconComp = feature.icon;
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -280,7 +284,7 @@ function FeatureCard({
       className="group bg-veda-card border border-veda-border-subtle rounded-xl p-8 hover:border-veda-border-active hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300"
     >
       <div className="flex items-center gap-3 mb-3">
-        <Icon size={24} style={{ color: accentColor }} />
+        <IconComp size={24} style={{ color: accentColor }} />
         <h3 className="text-xl font-bold text-white">{feature.title}</h3>
       </div>
       <p className="text-[15px] text-veda-gray leading-relaxed mb-4">
@@ -495,7 +499,7 @@ export default function Features() {
               </a>
             </div>
           </SectionReveal>
-        </div>
+         </div>
       </section>
     </div>
   );

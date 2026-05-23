@@ -1,118 +1,122 @@
+import type { MouseEvent } from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Database } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productOpen, setProductOpen] = useState(false);
   const location = useLocation();
 
+  // Track scroll position for transparent → solid transition
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
-    setProductOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
+  // Smooth scroll to section handler
+  const scrollToSection = (e: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      // Navigate to home first, then scroll
+      window.location.hash = '/'; 
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(sectionId);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMobileOpen(false);
+  };
+
+  // Nav links for single-page anchor navigation
   const navLinks = [
-    { label: 'Features', path: '/features' },
-    { label: 'Compare', path: '/compare' },
-    { label: 'Pricing', path: '/pricing' },
-    { label: 'Docs', path: '/docs' },
-  ];
-
-  const productLinks = [
-    { label: 'Overview', path: '/' },
-    { label: 'Features', path: '/features' },
-    { label: 'Playground', path: '/playground' },
+    { label: 'Features', href: '#features' },
+    { label: 'Architecture', href: '#architecture' },
+    { label: 'Benchmarks', href: '#benchmarks' },
+    { label: 'Install', href: '#install' },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-veda-bg/80 backdrop-blur-xl border-b border-veda-border-subtle'
+          ? 'bg-[var(--bg-glass)] backdrop-blur-[12px] border-b border-[var(--border-subtle)]'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="veda-container">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <Database className="w-6 h-6 text-veda-amber group-hover:text-veda-amber-light transition-colors" />
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-veda-amber">VEDA</span>
-              <span className="text-white">DB</span>
+          <Link to="/" className="flex items-center gap-2.5 group">
+            {/* Logo icon */}
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition-transform duration-200 group-hover:scale-110"
+            >
+              <rect width="32" height="32" rx="6" fill="#111" stroke="#222" strokeWidth="1" />
+              <path d="M8 20L12 12L16 20L20 12L24 20" stroke="#76B900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="text-xl font-bold tracking-tight font-[var(--font-heading)]">
+              <span className="text-[var(--text-primary)]">Veda</span>
+              <span className="text-[var(--accent-green)]">DB</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {/* Product dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setProductOpen(!productOpen)}
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-veda-off-white hover:text-white transition-colors rounded-lg hover:bg-white/5"
-              >
-                Product
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform ${productOpen ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {productOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-veda-card border border-veda-border-subtle rounded-xl shadow-xl overflow-hidden">
-                  {productLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className="block px-4 py-2.5 text-sm text-veda-off-white hover:text-white hover:bg-veda-amber/10 transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-veda-amber bg-veda-amber/10'
-                    : 'text-veda-off-white hover:text-white hover:bg-white/5'
-                }`}
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href.slice(1))}
+                className="veda-nav-link px-4 py-2 text-sm font-medium rounded-lg transition-colors"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  lineHeight: '1.0',
+                  letterSpacing: '0.01em',
+                }}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              to="/pricing"
-              className="inline-flex items-center px-6 py-2.5 bg-veda-amber text-veda-bg text-sm font-bold rounded-lg hover:bg-veda-amber-light hover:shadow-lg hover:shadow-veda-amber/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-250"
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="#install"
+              onClick={(e) => scrollToSection(e, 'install')}
+              className="veda-btn-primary"
             >
+              <Zap size={16} className="mr-2" />
               Get Started
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-[var(--text-primary)] hover:text-[var(--accent-green)] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -122,41 +126,27 @@ function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-veda-bg/95 backdrop-blur-xl border-t border-veda-border-subtle">
+        <div className="md:hidden bg-[var(--bg-glass)] backdrop-blur-[12px] border-t border-[var(--border-subtle)]">
           <div className="veda-container py-4 space-y-1">
-            <div className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-veda-gray">
-              Product
-            </div>
-            {productLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="block px-4 py-2.5 text-sm text-veda-off-white hover:text-veda-amber transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="border-t border-veda-border-subtle my-2" />
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-veda-amber bg-veda-amber/10'
-                    : 'text-veda-off-white hover:text-white hover:bg-white/5'
-                }`}
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => scrollToSection(e, link.href.slice(1))}
+                className="block px-4 py-3 text-sm font-medium rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-colors"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <div className="pt-3">
-              <Link
-                to="/pricing"
-                className="block w-full text-center px-6 py-3 bg-veda-amber text-veda-bg text-sm font-bold rounded-lg"
+            <div className="border-t border-[var(--border-subtle)] my-2 pt-2">
+              <a
+                href="#install"
+                onClick={(e) => scrollToSection(e, 'install')}
+                className="veda-btn-primary w-full"
               >
+                <Zap size={16} className="mr-2" />
                 Get Started
-              </Link>
+              </a>
             </div>
           </div>
         </div>

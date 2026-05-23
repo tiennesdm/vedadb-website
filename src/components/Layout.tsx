@@ -1,5 +1,4 @@
 import { useEffect, type ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,37 +11,40 @@ interface LayoutProps {
   children: ReactNode;
 }
 
+/**
+ * Layout — root wrapper providing:
+ * - Lenis smooth scroll (lerp: 0.1, duration: 1.2)
+ * - GSAP ScrollTrigger sync
+ * - Fixed navbar + footer
+ * - Scroll-to-top on route change
+ */
 function Layout({ children }: LayoutProps) {
-  const location = useLocation();
-
+  // Initialize Lenis + GSAP ScrollTrigger sync
   useEffect(() => {
     const lenis = new Lenis({
+      lerp: 0.1,
       duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
 
-    // Sync Lenis with GSAP ScrollTrigger
+    // Sync Lenis scroll events with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
+    // Drive Lenis from GSAP's ticker for performance
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
+
+    // Disable lag smoothing for smoother animation
     gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 
-  // Scroll to top on route change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-[100dvh] flex flex-col">
+    <div className="min-h-[100dvh] flex flex-col bg-[var(--bg-primary)]">
       <Navbar />
       <main className="flex-1 pt-[72px]">
         {children}

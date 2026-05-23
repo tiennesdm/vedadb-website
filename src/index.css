@@ -6,91 +6,362 @@
 
 @layer base {
   :root {
-    --background: 220 30% 7%;
-    --foreground: 0 0% 100%;
-    --card: 215 28% 15%;
-    --card-foreground: 0 0% 100%;
-    --popover: 215 28% 15%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 38 78% 56%;
-    --primary-foreground: 220 30% 7%;
-    --secondary: 215 20% 25%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 215 20% 25%;
-    --muted-foreground: 218 12% 59%;
-    --accent: 165 100% 42%;
-    --accent-foreground: 220 30% 7%;
+    /* ===== VedaDB Color Tokens ===== */
+    --bg-primary: #000000;
+    --bg-secondary: #050505;
+    --bg-tertiary: #0A0A0A;
+    --bg-glass: rgba(10, 10, 10, 0.8);
+
+    --accent-green: #76B900;
+    --accent-green-hover: #8CD600;
+    --accent-green-dim: rgba(118, 185, 0, 0.15);
+    --accent-green-glow: rgba(118, 185, 0, 0.3);
+    --accent-green-glow-subtle: rgba(118, 185, 0, 0.1);
+
+    --text-primary: #EAEAEA;
+    --text-secondary: #A0A0A0;
+    --text-muted: #555555;
+
+    --border-subtle: #222222;
+    --border-green: rgba(118, 185, 0, 0.4);
+
+    /* Tier colors (Architecture diagram only) */
+    --gpu-tier: #76B900;
+    --tpu-tier: #FF6D00;
+    --cpu-tier: #2962FF;
+
+    /* ===== Shadcn/ui compatibility tokens ===== */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 92%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 78 100% 36%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 78 100% 36%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 215 20% 25%;
-    --input: 215 20% 25%;
-    --ring: 38 78% 56%;
-    --radius: 0.625rem;
-    --sidebar-background: 220 30% 7%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 38 78% 56%;
-    --sidebar-primary-foreground: 220 30% 7%;
-    --sidebar-accent: 215 28% 15%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 20% 25%;
-    --sidebar-ring: 38 78% 56%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 78 100% 36%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 78 100% 36%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 13%;
+    --sidebar-ring: 78 100% 36%;
+
+    /* ===== Typography ===== */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* ===== Spacing ===== */
+    --space-section: 120px;
+    --space-content: 64px;
+    --space-card: 32px;
+    --space-element: 24px;
+    --space-tight: 12px;
+    --container-max: 1280px;
+    --container-pad: 24px;
+
+    /* ===== Animation Easings ===== */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+    --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+    --ease-dramatic: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   body {
-    @apply bg-veda-bg text-white font-sans antialiased;
-    background: linear-gradient(180deg, #0A0E1A 0%, #0F1923 100%);
-    min-height: 100vh;
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+    overflow-x: hidden;
   }
 
+  /* Selection styling */
   ::selection {
-    background: rgba(232, 168, 56, 0.3);
-    color: white;
+    background-color: var(--accent-green-glow);
+    color: var(--text-primary);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.1ms !important;
+    }
+    html {
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer components {
+  /* ===== VedaDB Component Classes ===== */
+
   .veda-container {
-    @apply max-w-[1280px] mx-auto px-6;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
   }
 
   .veda-section {
-    @apply py-24 relative;
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+    position: relative;
   }
 
+  /* Primary CTA Button */
+  .veda-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: var(--accent-green);
+    color: #000000;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s var(--ease-smooth);
+  }
+  .veda-btn-primary:hover {
+    background-color: var(--accent-green-hover);
+    transform: scale(1.02);
+  }
+  .veda-btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  /* Secondary Button */
+  .veda-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .veda-btn-secondary:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+  }
+
+  /* Feature Card */
   .veda-card {
-    @apply bg-veda-card border border-veda-border-subtle rounded-xl p-6;
-    backdrop-filter: blur(10px);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: var(--space-card);
+    transition: all 0.3s var(--ease-smooth);
+  }
+  .veda-card:hover {
+    border-color: var(--border-green);
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px var(--accent-green-glow-subtle);
   }
 
-  .veda-gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #E8A838 0%, #F0C060 50%, #00D4AA 100%);
+  /* Engine Icon Badge */
+  .veda-icon-badge {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    transition: all 0.2s var(--ease-smooth);
+  }
+  .veda-icon-badge:hover {
+    background-color: var(--accent-green-dim);
+    border-color: var(--border-green);
   }
 
-  .veda-glow {
-    box-shadow: 0 0 20px rgba(232, 168, 56, 0.3), 0 0 40px rgba(232, 168, 56, 0.1);
+  /* Code Block */
+  .veda-code-block {
+    background-color: #0D0D0D;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
   }
 
-  .veda-glow-cyan {
-    box-shadow: 0 0 20px rgba(0, 212, 170, 0.3), 0 0 40px rgba(0, 212, 170, 0.1);
+  /* Version Badge */
+  .veda-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background-color: var(--accent-green-dim);
+    border: 1px solid rgba(118, 185, 0, 0.3);
+    border-radius: 20px;
+    color: var(--accent-green);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  /* Nav link underline animation */
+  .veda-nav-link {
+    position: relative;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+  .veda-nav-link:hover {
+    color: var(--text-primary);
+  }
+  .veda-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s var(--ease-smooth);
+  }
+  .veda-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Typography classes */
+  .veda-display-h1 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+  }
+
+  .veda-section-h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .veda-subheadline {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .veda-feature-title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .veda-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .veda-code-text {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .veda-label {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+  }
+
+  /* Green accent text */
+  .veda-accent-text {
+    color: var(--accent-green);
+  }
+
+  /* Green glow effect */
+  .veda-glow-green {
+    box-shadow: 0 0 20px var(--accent-green-glow-subtle), 0 0 40px var(--accent-green-glow-subtle);
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    .veda-display-h1 {
+      font-size: 40px;
+    }
+    .veda-section-h2 {
+      font-size: 32px;
+    }
+    .veda-subheadline {
+      font-size: 18px;
+    }
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0A0E1A;
-}
-::-webkit-scrollbar-thumb {
-  background: #3A4556;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #E8A838;
-}
+@layer utilities {
+  /* Green text gradient */
+  .text-gradient-green {
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-green-hover) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-html {
-  scroll-behavior: smooth;
+  /* Border glow utility */
+  .border-glow-green {
+    border-color: var(--border-green);
+    box-shadow: 0 0 12px var(--accent-green-glow-subtle);
+  }
 }

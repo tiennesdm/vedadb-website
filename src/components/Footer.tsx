@@ -1,26 +1,25 @@
-import { Link } from 'react-router-dom';
-import { Database, Github, Twitter, MessageCircle } from 'lucide-react';
+import { Github, Twitter, MessageCircle } from 'lucide-react';
 
 function Footer() {
   const productLinks = [
-    { label: 'Features', path: '/features' },
-    { label: 'Compare', path: '/compare' },
-    { label: 'Pricing', path: '/pricing' },
-    { label: 'Playground', path: '/playground' },
+    { label: 'Features', href: '#features' },
+    { label: 'Architecture', href: '#architecture' },
+    { label: 'Benchmarks', href: '#benchmarks' },
+    { label: 'Install', href: '#install' },
   ];
 
   const resourceLinks = [
-    { label: 'Documentation', path: '/docs' },
-    { label: 'API Reference', path: '/docs' },
-    { label: 'Tutorials', path: '/docs' },
-    { label: 'Blog', path: '/' },
+    { label: 'Documentation', href: '#' },
+    { label: 'API Reference', href: '#' },
+    { label: 'Tutorials', href: '#' },
+    { label: 'Blog', href: '#' },
   ];
 
   const companyLinks = [
-    { label: 'About', path: '/' },
-    { label: 'Careers', path: '/' },
-    { label: 'Contact', path: '/' },
-    { label: 'Partners', path: '/' },
+    { label: 'About', href: '#' },
+    { label: 'Careers', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Partners', href: '#' },
   ];
 
   const socialLinks = [
@@ -29,52 +28,85 @@ function Footer() {
     { label: 'Discord', icon: MessageCircle, href: 'https://discord.gg/vedadb' },
   ];
 
-  return (
-    <footer className="relative bg-veda-bg border-t border-veda-border-subtle">
-      {/* Gradient top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-veda-amber/50 to-transparent" />
+  // MIT License badge component
+  const LicenseBadge = () => (
+    <span
+      className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium"
+      style={{
+        backgroundColor: 'var(--bg-tertiary)',
+        border: '1px solid var(--border-subtle)',
+        color: 'var(--text-secondary)',
+        fontFamily: 'var(--font-mono)',
+        fontSize: '11px',
+      }}
+    >
+      MIT License
+    </span>
+  );
 
-      <div className="veda-container py-16">
+  return (
+    <footer className="relative bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
+      {/* Green glow top border */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background: 'linear-gradient(90deg, transparent 0%, var(--accent-green) 50%, transparent 100%)',
+          opacity: 0.4,
+        }}
+      />
+
+      <div className="veda-container" style={{ paddingTop: '64px', paddingBottom: '48px' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 group mb-4">
-              <Database className="w-6 h-6 text-veda-amber group-hover:text-veda-amber-light transition-colors" />
+            {/* Logo */}
+            <div className="flex items-center gap-2.5 mb-4">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="32" height="32" rx="6" fill="#111" stroke="#222" strokeWidth="1" />
+                <path d="M8 20L12 12L16 20L20 12L24 20" stroke="#76B900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               <span className="text-xl font-bold tracking-tight">
-                <span className="text-veda-amber">VEDA</span>
-                <span className="text-white">DB</span>
+                <span className="text-[var(--text-primary)]">Veda</span>
+                <span className="text-[var(--accent-green)]">DB</span>
               </span>
-            </Link>
-            <p className="text-veda-gray text-sm leading-relaxed mb-6 max-w-sm">
-              One database engine that replaces eight separate systems. SQL, Graph, Vector, Document, Key-Value, Time-Series, Columnar, and Search — unified.
+            </div>
+
+            <p className="text-sm leading-relaxed mb-6 max-w-sm" style={{ color: 'var(--text-secondary)' }}>
+              A GPU-native multi-model database. SQL, Graph, Vector, Document,
+              Key-Value, Time-Series, Columnar, and Ledger — unified on GPU.
             </p>
-            {/* Newsletter */}
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2.5 bg-veda-card border border-veda-border-subtle rounded-lg text-sm text-white placeholder:text-veda-gray-muted focus:outline-none focus:border-veda-amber transition-colors"
-              />
-              <button className="px-4 py-2.5 bg-veda-amber text-veda-bg text-sm font-bold rounded-lg hover:bg-veda-amber-light transition-colors">
-                Subscribe
-              </button>
+
+            {/* Version + License */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="veda-badge">v2.4.0</span>
+              <LicenseBadge />
             </div>
           </div>
 
           {/* Product column */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-veda-gray mb-4">
+            <h4
+              className="text-sm font-semibold uppercase tracking-wider mb-4"
+              style={{ color: 'var(--text-muted)' }}
+            >
               Product
             </h4>
             <ul className="space-y-3">
               {productLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-veda-off-white hover:text-veda-amber transition-colors"
+                  <a
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-[var(--accent-green)]"
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -82,18 +114,22 @@ function Footer() {
 
           {/* Resources column */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-veda-gray mb-4">
+            <h4
+              className="text-sm font-semibold uppercase tracking-wider mb-4"
+              style={{ color: 'var(--text-muted)' }}
+            >
               Resources
             </h4>
             <ul className="space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-veda-off-white hover:text-veda-amber transition-colors"
+                  <a
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-[var(--accent-green)]"
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -101,18 +137,22 @@ function Footer() {
 
           {/* Company column */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-veda-gray mb-4">
+            <h4
+              className="text-sm font-semibold uppercase tracking-wider mb-4"
+              style={{ color: 'var(--text-muted)' }}
+            >
               Company
             </h4>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-veda-off-white hover:text-veda-amber transition-colors"
+                  <a
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-[var(--accent-green)]"
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -120,10 +160,13 @@ function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-veda-border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-veda-gray">
-            &copy; 2026 VedaDB. All rights reserved.
+        <div
+          className="mt-16 pt-8 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            &copy; 2025 VedaDB. All rights reserved.
           </p>
+
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
               <a
@@ -131,7 +174,8 @@ function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-veda-gray hover:text-veda-amber transition-colors"
+                className="p-2 transition-colors hover:text-[var(--accent-green)]"
+                style={{ color: 'var(--text-muted)' }}
                 aria-label={link.label}
               >
                 <link.icon size={20} />
